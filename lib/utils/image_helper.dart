@@ -1,27 +1,11 @@
+String symbol = "\$";
 const String SPLASH_LOGO = "assets/Images/carton.png";
 const String SPLASH_BACKGROUND = "assets/Images/Splash_Backgraund.png";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const String Cross_doller_icon = "assets/Images/Cross_doller_icon.png";
+const String Circle_doller_icon = "assets/Images/Circle_doller_icon.png";
+const String add_a_photo = "assets/Images/add_a_photo.png";
+const String Side_drawer = "assets/Images/Side_drawer.png";
+const String Scenner = "assets/Images/Scenner.png";
 
 
 

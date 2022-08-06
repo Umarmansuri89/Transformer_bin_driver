@@ -4,8 +4,6 @@ import 'package:get/get.dart';
 import '../../../global_widgets/appBar_without_back_button.dart';
 import '../../../global_widgets/textEnter.dart';
 import '../../../routes/app_pages.dart';
-import '../../../utils/image_helper.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import '../../dashboard/local_widget/photo_card.dart';
 import '../controllers/home_controller.dart';
 
@@ -13,21 +11,22 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff0D0B21),
+      backgroundColor: const Color(0xff0D0B21),
       appBar: appbar_one("Home"),
       body: Container(
-        color: Color(0xff0D0B21),
+        color: const Color(0xff0D0B21),
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: EdgeInsets.all(10.0),
           child: SingleChildScrollView(
+
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 10.0),
+                     Padding(
+                      padding: EdgeInsets.only(left: 10.0),
                       child: TextFieldShow(
                         text: "Top Rated Girls",
                         color: Colors.white,
@@ -38,7 +37,7 @@ class HomeView extends GetView<HomeController> {
                     ),
                     GestureDetector(
                       onTap: onAllSelect,
-                      child: TextFieldShow(
+                      child:  TextFieldShow(
                         text: "See all",
                         fontFamily: 'Lato',
                         fontWeight: FontWeight.w900,
@@ -49,10 +48,10 @@ class HomeView extends GetView<HomeController> {
                   ],
                 ),
                 Obx(
-                  () => Container(
+                  () => SizedBox(
                     height: 170,
                     child: ListView.builder(
-                      physics: ClampingScrollPhysics(),
+                      physics: const ClampingScrollPhysics(),
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
                       itemCount: /*controller.girl_list.length*/ 2> 3
@@ -63,7 +62,7 @@ class HomeView extends GetView<HomeController> {
                             height: 160,
                             width: 135,
                             color: Colors.transparent,
-                            child: Obx(() => PhotoCard(
+                            child: Obx(() => const PhotoCard(
                                   height: 170,
                                   width: 120,
                                   img: "Images/news.png",
@@ -73,11 +72,11 @@ class HomeView extends GetView<HomeController> {
                                   name: "umar",
                                 )));
                       },
-                      padding: EdgeInsets.all(2.0),
+                      padding: const EdgeInsets.all(2.0),
                     ),
                   ),
                 ),
-                Padding(
+                 Padding(
                   padding: EdgeInsets.only(left: 5.0, top: 20, bottom: 5),
                   child: TextFieldShow(
                     text: "Create Event",
@@ -92,27 +91,27 @@ class HomeView extends GetView<HomeController> {
                   child: Container(
                     width: double.maxFinite,
                     decoration: BoxDecoration(
-                      color: Color(0xff0D0B21),
+                      color: const Color(0xff0D0B21),
                       border: Border.all(
-                        color: Color(0xff312d5e),
+                        color: const Color(0xff312d5e),
                         width: 1,
                       ),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.only(left: 0,right: 0,top: 20,bottom: 20),
+                      padding: const EdgeInsets.only(left: 0,right: 0,top: 20,bottom: 20),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          Icon(
+                          const Icon(
                             Icons.calendar_today_outlined,
                             color: Colors.white,
                             size: 30,
                           ),
                           Container(
-                            margin: EdgeInsets.only(top: 10),
-                            child: TextFieldShow(
+                            margin: const EdgeInsets.only(top: 10),
+                            child:  TextFieldShow(
                               text: "Create Event",
                               color: Colors.white,
                               fontsize: 15,
@@ -129,8 +128,8 @@ class HomeView extends GetView<HomeController> {
                       ? Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Padding(
-                              padding: const EdgeInsets.only(
+                             Padding(
+                              padding: EdgeInsets.only(
                                   left: 10.0, top: 20, bottom: 5),
                               child: TextFieldShow(
                                 text: "FAQ's",
@@ -145,9 +144,9 @@ class HomeView extends GetView<HomeController> {
                               padding: const EdgeInsets.only(bottom: 10.0),
                               child: ClipRRect(
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(20)),
+                                    const BorderRadius.all(Radius.circular(20)),
                                 child: Container(
-                                  child: ExpansionTile(
+                                  child: const ExpansionTile(
                                     collapsedBackgroundColor: Color(0xff211D4A),
                                     iconColor: Colors.white,
                                     collapsedIconColor: Colors.white,
@@ -162,7 +161,7 @@ class HomeView extends GetView<HomeController> {
                                     children: <Widget>[
                                       Padding(
                                         padding:
-                                            const EdgeInsets.only(bottom: 5.0),
+                                            EdgeInsets.only(bottom: 5.0),
                                         child: ListTile(
                                             dense: true,
                                             title: Text(
@@ -187,9 +186,9 @@ class HomeView extends GetView<HomeController> {
                                         const EdgeInsets.only(bottom: 10.0),
                                     child: ClipRRect(
                                       borderRadius:
-                                          BorderRadius.all(Radius.circular(20)),
+                                          const BorderRadius.all(Radius.circular(20)),
                                       child: Container(
-                                        child: ExpansionTile(
+                                        child: const ExpansionTile(
                                           collapsedBackgroundColor:
                                               Color(0xff211D4A),
                                           iconColor: Colors.white,
@@ -205,7 +204,7 @@ class HomeView extends GetView<HomeController> {
                                           backgroundColor: Color(0xff211D4A),
                                           children: <Widget>[
                                             Padding(
-                                              padding: const EdgeInsets.only(
+                                              padding: EdgeInsets.only(
                                                   bottom: 5.0),
                                               child: ListTile(
                                                   title: Text(
@@ -225,16 +224,16 @@ class HomeView extends GetView<HomeController> {
                                       ),
                                     ),
                                   )
-                                : SizedBox(),
+                                : const SizedBox(),
                                1 > 2
                                 ? Padding(
                               padding:
                               const EdgeInsets.only(bottom: 10.0),
                               child: ClipRRect(
                                 borderRadius:
-                                BorderRadius.all(Radius.circular(20)),
+                                const BorderRadius.all(Radius.circular(20)),
                                 child: Container(
-                                  child: ExpansionTile(
+                                  child: const ExpansionTile(
                                     collapsedBackgroundColor:
                                     Color(0xff211D4A),
                                     iconColor: Colors.white,
@@ -250,7 +249,7 @@ class HomeView extends GetView<HomeController> {
                                     backgroundColor: Color(0xff211D4A),
                                     children: <Widget>[
                                       Padding(
-                                        padding: const EdgeInsets.only(
+                                        padding: EdgeInsets.only(
                                             bottom: 5.0),
                                         child: ListTile(
                                             title: Text(
@@ -270,13 +269,13 @@ class HomeView extends GetView<HomeController> {
                                 ),
                               ),
                             )
-                                : SizedBox(),
+                                :  SizedBox(),
                             GestureDetector(
                               onTap: () {
                                 Get.toNamed(Routes.FAQ_NEW_WITH_BACK_BUTTON);
                               },
-                              child: Padding(
-                                padding: const EdgeInsets.only(
+                              child:  Padding(
+                                padding: EdgeInsets.only(
                                     top: 10.0, bottom: 20),
                                 child: Center(
                                   child: TextFieldShow(
@@ -291,7 +290,7 @@ class HomeView extends GetView<HomeController> {
                             )
                           ],
                         )
-                      : SizedBox(),
+                      : const SizedBox(),
                 )
               ],
             ),

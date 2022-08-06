@@ -47,6 +47,7 @@ dependencies:
   flutter_rounded_date_picker: ^3.0.1
   syncfusion_flutter_datepicker: ^20.2.40
   expansion_tile_card: ^2.0.0
+  dropdown_button2: ^1.7.1
 
 
 flutter_launcher_name:

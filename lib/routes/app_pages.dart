@@ -1,42 +1,41 @@
 import 'package:get/get.dart';
-import 'package:transformer_bin_driver/modules/splash/bindings/splash_binding.dart';
-import '../modules/Burger_Manu/bindings/Burger_manu_binding.dart';
-import '../modules/Burger_Manu/views/Burger_manu_view.dart';
-import '../modules/Deshboard_screen/bindings/Dashboard_screen_binding.dart';
-import '../modules/Deshboard_screen/views/Dashboard_screen_view.dart';
-import '../modules/Information/Views/information_view.dart';
-import '../modules/Information/bindings/information_biding.dart';
+import 'package:transformer_bin_driver/modules/jobtype_long/bindings/jobtype_long_biding.dart';
+import '../modules/Deliverd_and_uploaded/bindings/Dashboard_screen_binding.dart';
+import '../modules/Deliverd_and_uploaded/views/Dashboard_screen_view.dart';
+import '../modules/Job_Type/bindings/Jobtype_binding.dart';
+import '../modules/Job_Type/views/Jobtype_view.dart';
 import '../modules/Login/bindings/Login_binding.dart';
 import '../modules/Login/views/Login_view.dart';
+import '../modules/Payment_due/binding/Payment_due_binding.dart';
+import '../modules/Payment_due/view/Payment_due_view.dart';
+import '../modules/SCHED/bindings/SCHED_binding.dart';
+import '../modules/SCHED/views/SCHED_views.dart';
+import '../modules/Schedule/bindings/Schedule_binding.dart';
+import '../modules/Schedule/views/Schedule_View.dart';
 import '../modules/dashboard/bindings/dashboard_binding.dart';
 import '../modules/dashboard/views/dashboard_view.dart';
-import '../modules/splash/views/splash_view.dart';
+import '../modules/jobtype_long/Views/jobtype_long_View.dart';
 
 part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
 
-  // static const INITIAL = Routes.SPLASH;
-  static const INITIAL = Routes.SPLASH;
+  static const INITIAL = Routes.SCHEDULE;
+  // static const INITIAL = Routes.INFORMTION;
+  // static const INITIAL = Routes.JOBTYPE;
 
   static final routes = [
 
     GetPage(
       name: _Paths.SPLASH,
-      page: () => SplashView(),
-      binding: SplashBinding(),
-    ),
-
-    GetPage(
-      name: _Paths.LOGIN,
       page: () => LoginView(),
       binding: LoginBinding(),
     ),
 
     GetPage(
       name: _Paths.DASHBOARD,
-      page: () => DashboardView(),
+      page: () => const DashboardView(),
       binding: DashboardBinding(),
     ),
 
@@ -46,16 +45,35 @@ class AppPages {
       binding: Deshboard_screen_Binding(),
     ),
 
+
     GetPage(
-      name: _Paths.BURGER_MANU,
-      page: () => Burger_manu_View(),
-      binding: Burger_manu_Binding(),
+      name: _Paths.JOBTYPE_LONG,
+      page: () => jobtype_long_View(),
+      binding: jobtype_long_Binding(),
     ),
 
     GetPage(
-      name: _Paths.INFORMTION,
-      page: () => InformationView(),
-      binding: Information_Binding(),
+      name: _Paths.PAYMENT_DUE,
+      page: () => Payment_due_view(),
+      binding: Payment_due_Binding(),
+    ),
+
+    GetPage(
+      name: _Paths.SCHEDULE,
+      page: () => Schedule_View(),
+      binding: Schedule_Binding(),
+    ),
+
+    GetPage(
+      name: _Paths.SCHED,
+      page: () => SCHED_view(),
+      binding: SCHED_Binding(),
+    ),
+
+    GetPage(
+      name: _Paths.JOBTYPE,
+      page: () => JobtypeView(),
+      binding: Jobtype_Binding(),
     ),
 
     /*GetPage(
@@ -211,5 +229,6 @@ class AppPages {
       page: () => PaymentSuccess1(),
       binding: PaymentSuccessBinding(),
     ),*/
+
   ];
 }

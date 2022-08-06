@@ -9,16 +9,7 @@ class Burger_manu_Controller extends GetxController {
   final current = 0.obs;
 
 
-  @override
-  void onInit() {
-    super.onInit();
-    // getAdvertisementList();
-  }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
 
   @override
   void onClose() {}
@@ -27,6 +18,14 @@ class Burger_manu_Controller extends GetxController {
 
   void onDashboard() async {
     Get.toNamed(Routes.DASHBOARD_SCREEN);
+  }
+
+  void onSCHED() async {
+    Get.toNamed(Routes.SCHED);
+  }
+
+  void onPaymentDue() async {
+    Get.toNamed(Routes.PAYMENT_DUE);
   }
 
   // void getAdvertisementList() async {

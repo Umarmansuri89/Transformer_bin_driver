@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../controllers/dashboard_controller.dart';
 
 
@@ -29,7 +28,7 @@ class _DashboardViewState extends State<DashboardView> {
       Container(
         child: Obx(() {
           if (controller.isLoading.value) {
-            return Center(
+            return const Center(
                 child: CupertinoActivityIndicator()
             );
           } else {
@@ -40,7 +39,7 @@ class _DashboardViewState extends State<DashboardView> {
 
       bottomNavigationBar: Container(
         height: size.width * .155,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0xffF79534),
         ),
         child: Row(
@@ -62,7 +61,7 @@ class _DashboardViewState extends State<DashboardView> {
                 children: [
                   AnimatedContainer(
                     //color: Color(0xffF79534),
-                    duration: Duration(milliseconds: 1500),
+                    duration: const Duration(milliseconds: 1500),
                     curve: Curves.fastLinearToSlowEaseIn,
                     margin: EdgeInsets.only(
                       bottom: index == controller.currentIndex.value ? 0 : size.width * .029,
@@ -81,8 +80,8 @@ class _DashboardViewState extends State<DashboardView> {
                         : controller.listOfIconsLight[index],
                     size: size.width * .076,
                     color: index == controller.currentIndex.value
-                        ? Color(0xffffffff)
-                        : Color(0xffffffff),
+                        ? const Color(0xffffffff)
+                        : const Color(0xffffffff),
                   ),
                   Text(
                     controller.listOfText[index],
@@ -90,8 +89,8 @@ class _DashboardViewState extends State<DashboardView> {
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
                       color: index == controller.currentIndex.value
-                          ? Color(0xffffffff)
-                          : Color(0xffffffff),
+                          ? const Color(0xffffffff)
+                          : const Color(0xffffffff),
                     ),
                   ),
                 ],

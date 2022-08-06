@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
@@ -7,7 +6,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../home/controllers/home_controller.dart';
 import '../../home/views/home_view.dart';
-
 
 class DashboardController extends GetxController {
   /*final item = [].obs;
@@ -33,18 +31,18 @@ class DashboardController extends GetxController {
 
   final List screens = [
     HomeView(),
-    Scaffold(
+    const Scaffold(
       body: Center(
         child: Text('B'),
       ),
     ),
    // AnalyticsScreen(),
-    Scaffold(
+    const Scaffold(
       body: Center(
         child: Text('C'),
       ),
     ),
-    Scaffold(
+    const Scaffold(
       body: Center(
         child: Text('D'),
       ),

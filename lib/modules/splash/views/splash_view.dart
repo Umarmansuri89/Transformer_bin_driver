@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import '../../../global_widgets/textEnter.dart';
 import '../../../routes/app_pages.dart';
 import '../../../utils/image_helper.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import '../controllers/splash_controller.dart';
 
 class SplashView extends GetView<SplashController> {
@@ -12,7 +11,6 @@ class SplashView extends GetView<SplashController> {
   Widget build(BuildContext context) {
     //LocalNotificationService.initialize(context);
     return
-
       Container(
         child: Obx(() {
           if (controller.isLoading.value) {

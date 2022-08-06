@@ -1,8 +1,5 @@
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../../../utils/api_service.dart';
-import '../../../utils/shared_prefrence/shared_prefrences_constant.dart';
-import '../../../utils/toast.dart';
 
 class HomeController extends GetxController {
   final count = 0.obs;
@@ -11,18 +8,7 @@ class HomeController extends GetxController {
   // final FaqList = <ItemModel>[].obs;
   late SharedPreferences prefs;
 
-  @override
-  void onInit() {
-    super.onInit();
-   /* getVenueList();
-    getFAQ();
-    getProfileDetail();*/
-  }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
 
   @override
   void onClose() {}

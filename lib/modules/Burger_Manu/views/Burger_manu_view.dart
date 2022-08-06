@@ -15,25 +15,25 @@ class Burger_manu_View extends GetView<Burger_manu_Controller> {
         Container(
           child: Obx(() {
             if (controller.isLoading.value) {
-              return Center(
+              return const Center(
                   child: CupertinoActivityIndicator()
               );
             } else {
               return Stack(
                 children: [
                   // Obx(() =>
-                  Container(
+                  SizedBox(
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height,
-
                     child: Image.asset("assets/Images/Burger_backgraund.png",fit: BoxFit.fill,),
                   ),
+
                   Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Padding(
-                        padding: EdgeInsets.only(top: 20),
+                        padding: const EdgeInsets.only(top: 100),
                         child:Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
@@ -41,22 +41,23 @@ class Burger_manu_View extends GetView<Burger_manu_Controller> {
                               onTap: (){
                                 controller.onDashboard();
                               },
+
                               child:  Padding(
-                                padding: const EdgeInsets.only(left: 20.0,),
+                                padding: EdgeInsets.only(left: 20.0,),
                                 child: TextFieldShow(
                                   height: 2,
-                                  text: "Dashborad",
+                                  text: "Dashboard",
                                   color: Color(0xFFFFFFFF),
                                   fontsize: 28,
                                   fontFamily: 'Lato',
-                                  fontWeight: FontWeight.w100,
+                                  fontWeight: FontWeight.w500,
                                 ),
                               ),
                             ),
 
-                            Padding(padding: EdgeInsets.only(right: 10),child: Container(
+                            Padding(padding: const EdgeInsets.only(right: 10),child: Container(
                               // width: MediaQuery.of(context).size.width,
-                              child:  Icon(
+                              child:  const Icon(
                                 Icons.arrow_back_ios,
                                 color: Colors.white,
                                 size: 30.0,
@@ -67,48 +68,60 @@ class Burger_manu_View extends GetView<Burger_manu_Controller> {
 
                           ],),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 20.0,),
-                        child: TextFieldShow(
-                          height: 1.2,
-                          text: "Schedule",
-                          color: Color(0xFFFFFFFF),
-                          fontsize: 28,
-                          fontFamily: 'Lato',
-                          fontWeight: FontWeight.w100,
+                      GestureDetector(
+                        onTap: (){
+                          controller.onSCHED();
+                        },
+                        child:  Padding(
+                          padding: EdgeInsets.only(left: 20.0,top: 3),
+                          child: TextFieldShow(
+                            height: 1.2,
+                            text: "Schedule",
+                            color: Color(0xFFFFFFFF),
+                            fontsize: 28,
+                            fontFamily: 'Lato',
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 20.0,),
+                       Padding(
+                        padding: EdgeInsets.only(left: 20.0,top: 3),
                         child: TextFieldShow(
                           height: 1.2,
                           text: "Stock",
                           color: Color(0xFFFFFFFF),
                           fontsize: 28,
                           fontFamily: 'Lato',
-                          fontWeight: FontWeight.w100,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 20.0,),
+                       Padding(
+                        padding: EdgeInsets.only(left: 20.0,top: 3),
                         child: TextFieldShow(
                           height: 1.2,
                           text: "Onsite",
                           color: Color(0xFFFFFFFF),
                           fontsize: 28,
                           fontFamily: 'Lato',
-                          fontWeight: FontWeight.w100,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 20.0,),
-                        child: TextFieldShow(
-                          height: 1.2,
-                          text: "Payment Due",
-                          color: Color(0xFFFFFFFF),
-                          fontsize: 28,
-                          fontFamily: 'Lato',
-                          fontWeight: FontWeight.w100,
+
+
+                      GestureDetector(
+                        onTap: (){
+                          controller.onPaymentDue();
+                        },
+                        child:  Padding(
+                          padding: EdgeInsets.only(left: 20.0,top: 3),
+                          child: TextFieldShow(
+                            height: 1.2,
+                            text: "Payment Due",
+                            color: Color(0xFFFFFFFF),
+                            fontsize: 28,
+                            fontFamily: 'Lato',
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ),
 
@@ -123,31 +136,21 @@ class Burger_manu_View extends GetView<Burger_manu_Controller> {
                         children: <Widget>[
                           Container(
                             height: MediaQuery.of(context).size.height/4,
-                            padding: EdgeInsets.only(top: 00,bottom: 20),
+                            padding:  EdgeInsets.only(top: 00,bottom: 20),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.end,
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
+                            children:  <Widget>[
+
                               Padding(
-                                padding: const EdgeInsets.only(left: 20.0),
-                                child: TextFieldShow(
-                                  height: 1.2,
-                                  text: "Settings",
-                                  color: Color(0xFF2E2E2E),
-                                  fontsize: 28,
-                                  fontFamily: 'Lato',
-                                  fontWeight: FontWeight.w100,
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 20.0),
+                                padding: EdgeInsets.only(left: 20.0),
                                 child: TextFieldShow(
                                   height: 1.2,
                                   text: "Logout",
                                   color: Color(0xFF2E2E2E),
                                   fontsize: 28,
                                   fontFamily: 'Lato',
-                                  fontWeight: FontWeight.w100,
+                                  fontWeight: FontWeight.w500,
                                 ),
                               ),
                             ],

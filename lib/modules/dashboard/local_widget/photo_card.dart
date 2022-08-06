@@ -11,7 +11,7 @@ class PhotoCard extends StatelessWidget {
   final String name;
   final String img;
 
-  PhotoCard(
+  const PhotoCard(
       {required this.height,
       required this.width,
       required this.name,

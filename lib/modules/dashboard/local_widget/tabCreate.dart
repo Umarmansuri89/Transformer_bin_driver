@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TabCreateDesing extends StatelessWidget {
   final String title;
 
-  TabCreateDesing({required this.title});
+  const TabCreateDesing({required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +16,7 @@ class TabCreateDesing extends StatelessWidget {
         alignment: Alignment.center,
         child: Text(
           title,
-          style: TextStyle(fontWeight: FontWeight.w500),
+          style: const TextStyle(fontWeight: FontWeight.w500),
         ),
       ),
     );
