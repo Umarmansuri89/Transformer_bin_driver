@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../utils/image_helper.dart';
 
 AppBar appbar_Scner(String sub_title, Function onTap) =>
@@ -10,6 +9,7 @@ AppBar appbar_Scner(String sub_title, Function onTap) =>
         color: Colors.white, //change your color here
       ),
       elevation: 0,
+
       leadingWidth: 30,
       backgroundColor: Color(0xffffffff),
       automaticallyImplyLeading: false,
