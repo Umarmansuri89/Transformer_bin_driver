@@ -16,24 +16,23 @@ AppBar appbar_Scner(String sub_title, Function onTap) =>
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-
           Row(children: <Widget>[
             GestureDetector(
               onTap: () {
-                onTap();
+                //onTap();
                 //Get.back();
               },
               child: Padding(padding: EdgeInsets.all(10),
-                child: Image.asset(Side_drawer),
+                child: Image.asset(Side_drawer,height: 40,width: 40,),
               ),
             ),
             GestureDetector(
               onTap: () {
-                onTap();
+                //onTap();
                 //Get.back();
               },
               child: Padding(padding: EdgeInsets.all(10),
-                child: Image.asset(Scenner),
+                child: Image.asset(Scenner,height: 40,width: 40),
               ),
             ),
 
