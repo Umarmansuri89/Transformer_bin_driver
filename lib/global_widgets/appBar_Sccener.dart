@@ -57,6 +57,7 @@ AppBar appbar_Scner(String sub_title, Function onTap) =>
               onTap: () {
                 onTap();
                 print('ssssssssssssss');
+
               },
               child: Text(
                 sub_title,
