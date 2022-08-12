@@ -272,7 +272,7 @@ class HomeView extends GetView<HomeController> {
                                 :  SizedBox(),
                             GestureDetector(
                               onTap: () {
-                                Get.toNamed(Routes.FAQ_NEW_WITH_BACK_BUTTON);
+                               // Get.toNamed(Routes.FAQ_NEW_WITH_BACK_BUTTON);
                               },
                               child:  Padding(
                                 padding: EdgeInsets.only(
@@ -301,10 +301,10 @@ class HomeView extends GetView<HomeController> {
   }
 
   void ontab() async {
-    Get.toNamed(Routes.CITY_LIST);
+   //
   }
 
   void onAllSelect() async {
-    Get.toNamed(Routes.TOP_RATED_GIRL);
+   //    Get.toNamed(Routes.TOP_RATED_GIRL);
   }
 }

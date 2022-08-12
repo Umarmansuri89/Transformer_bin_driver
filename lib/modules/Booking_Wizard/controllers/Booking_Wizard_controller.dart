@@ -28,16 +28,6 @@ class Booking_Wizard_controler extends GetxController{
   String? selectedValue1;
 
 
-
-
-  final TextEditingController fullname = TextEditingController(text: "");
-  final TextEditingController phone = TextEditingController(text: "");
-  final TextEditingController email = TextEditingController(text: "");
-  final TextEditingController partyaddress = TextEditingController(text: "");
-  final TextEditingController Partycity = TextEditingController(text: "");
-  final TextEditingController zipcode = TextEditingController(text: "");
-
-
   final count = 0.obs;
 
   @override

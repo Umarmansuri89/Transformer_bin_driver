@@ -17,7 +17,7 @@ class Burger_manu_Controller extends GetxController {
   void increment() => count.value++;
 
   void onDashboard() async {
-    Get.toNamed(Routes.DASHBOARD_SCREEN);
+    //Get.toNamed(Routes.DASHBOARD_SCREEN);
   }
 
   void onSCHED() async {

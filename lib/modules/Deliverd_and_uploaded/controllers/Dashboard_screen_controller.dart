@@ -56,7 +56,7 @@ class Deshboard_screen_Controller extends GetxController {
   void increment() => count.value++;
 
   void onDashboard() async {
-    Get.toNamed(Routes.DASHBOARD);
+    //Get.toNamed(Routes.DASHBOARD);
   }
 
   void onPaymentDue() async {

@@ -19,12 +19,13 @@ abstract class Routes {
   static const JOBTYPE_LONG = _Paths.JOBTYPE_LONG;
   static const JOBTYPE_STATUS = _Paths.JOBTYPE_STATUS;
   static const BOKINGWIZARD = _Paths.BOKINGWIZARD;
+  static const JOB_LIST = _Paths.JOB_LIST;
 
 
 
 
 
-  static const ABOUTUS = _Paths.ABOUTUS;
+  /*static const ABOUTUS = _Paths.ABOUTUS;
   static const PROFILE_PAGE = _Paths.PROFILE_PAGE;
   static const PROFILE_DETAIL = _Paths.PROFILE_DETAIL;
   static const ADD_LISTING = _Paths.ADD_LISTING;
@@ -52,7 +53,7 @@ abstract class Routes {
   static const ORDER_DETAILS = _Paths.ORDER_DETAILS;
   static const ORDER_DETAIL_SUMMARY = _Paths.ORDER_DETAIL_SUMMARY;
   static const FAQ_NEW_WITH_BACK_BUTTON = _Paths.FAQ_NEW_WITH_BACK_BUTTON;
-  static const PAYMENT_SUCCESS = _Paths.PAYMENT_SUCCESS;
+  static const PAYMENT_SUCCESS = _Paths.PAYMENT_SUCCESS;*/
 }
 
 abstract class _Paths {
@@ -71,13 +72,14 @@ abstract class _Paths {
   static const JOBTYPE_LONG = '/Jobtypelong';
   static const JOBTYPE_STATUS = '/Jobtype_status';
   static const BOKINGWIZARD = '/BookingWizard';
+  static const JOB_LIST = '/job_list';
+  static const DASHBOARD = '/dashboard';
+  static const DASHBOARD_SCREEN = '/dashboardscreen';
 
 
 
 
-
-
-  static const ABOUTUS = '/aboutus';
+ /* static const ABOUTUS = '/aboutus';
   static const PROFILE_PAGE = '/profile-page';
   static const PROFILE_DETAIL = '/profile-detail';
   static const ADD_LISTING = '/add-listing';
@@ -105,5 +107,5 @@ abstract class _Paths {
   static const ORDER_HISTORY = '/order-history';
   static const ORDER_DETAILS = '/order-details';
   static const ORDER_DETAIL_SUMMARY = '/order-detail-summary';
-  static const PAYMENT_SUCCESS = '/PAYMENT_SUCCESS';
+  static const PAYMENT_SUCCESS = '/PAYMENT_SUCCESS';*/
 }

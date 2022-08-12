@@ -55,14 +55,14 @@ class LoginView extends GetView<LoginController> {
                                   height: 2,
                                   text: "Hello!",
                                   color: Color(0xFFF79534),
-                                  fontsize: 69,
+                                  fontsize: 60,
                                   fontFamily: 'Lato',
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
                               Container(
                                 // width: MediaQuery.of(context).size.width,
-                                child: Image.asset("assets/Images/carton.png",fit: BoxFit.cover,height: 300,width: 195,),
+                                child: Image.asset("assets/Images/carton.png",fit: BoxFit.fill,height: 300,width: 190,),
                               ),
 
                             ],),

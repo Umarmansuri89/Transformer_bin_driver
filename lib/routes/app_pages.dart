@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 import 'package:transformer_bin_driver/modules/Booking_Wizard/bindings/Booking_Wizard_binding.dart';
 import 'package:transformer_bin_driver/modules/Job_Type_Status/bindings/Jobtype_status_binding.dart';
 import 'package:transformer_bin_driver/modules/Job_Type_Status/views/Jobtype_status_view.dart';
+import 'package:transformer_bin_driver/modules/Job_list/bindings/Job_list_binding.dart';
+import 'package:transformer_bin_driver/modules/Job_list/views/Job_list_view.dart';
 import 'package:transformer_bin_driver/modules/jobtype_long/bindings/jobtype_long_biding.dart';
 import '../modules/Booking_Wizard/views/Booking_Wizard_view.dart';
 import '../modules/Deliverd_and_uploaded/bindings/Dashboard_screen_binding.dart';
@@ -25,7 +27,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.BOKINGWIZARD;
+  static const INITIAL = Routes.JOB_LIST;
 
   static final routes = [
 
@@ -90,6 +92,12 @@ class AppPages {
       binding: Booking_Wizard_Binding(),
     ),
 
+
+    GetPage(
+      name: _Paths.JOB_LIST,
+      page: () => Job_list_View(),
+      binding: Job_list_binding(),
+    ),
     /*GetPage(
       name: _Paths.HOME,
       page: () => HomeView(),
