@@ -17,6 +17,8 @@ abstract class Routes {
   static const SCHED = _Paths.SCHED;
   static const JOBTYPE = _Paths.JOBTYPE;
   static const JOBTYPE_LONG = _Paths.JOBTYPE_LONG;
+  static const JOBTYPE_STATUS = _Paths.JOBTYPE_STATUS;
+  static const BOKINGWIZARD = _Paths.BOKINGWIZARD;
 
 
 
@@ -67,6 +69,8 @@ abstract class _Paths {
   static const SCHED = '/Sched';
   static const JOBTYPE = '/Jobtype';
   static const JOBTYPE_LONG = '/Jobtypelong';
+  static const JOBTYPE_STATUS = '/Jobtype_status';
+  static const BOKINGWIZARD = '/BookingWizard';
 
 
 

@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import '../utils/image_helper.dart';
 
 AppBar appbar_Scner(String sub_title, Function onTap) =>

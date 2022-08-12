@@ -1,5 +1,9 @@
 import 'package:get/get.dart';
+import 'package:transformer_bin_driver/modules/Booking_Wizard/bindings/Booking_Wizard_binding.dart';
+import 'package:transformer_bin_driver/modules/Job_Type_Status/bindings/Jobtype_status_binding.dart';
+import 'package:transformer_bin_driver/modules/Job_Type_Status/views/Jobtype_status_view.dart';
 import 'package:transformer_bin_driver/modules/jobtype_long/bindings/jobtype_long_biding.dart';
+import '../modules/Booking_Wizard/views/Booking_Wizard_view.dart';
 import '../modules/Deliverd_and_uploaded/bindings/Dashboard_screen_binding.dart';
 import '../modules/Deliverd_and_uploaded/views/Dashboard_screen_view.dart';
 import '../modules/Job_Type/bindings/Jobtype_binding.dart';
@@ -21,9 +25,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.SCHEDULE;
-  // static const INITIAL = Routes.INFORMTION;
-  // static const INITIAL = Routes.JOBTYPE;
+  static const INITIAL = Routes.BOKINGWIZARD;
 
   static final routes = [
 
@@ -74,6 +76,18 @@ class AppPages {
       name: _Paths.JOBTYPE,
       page: () => JobtypeView(),
       binding: Jobtype_Binding(),
+    ),
+
+    GetPage(
+      name: _Paths.JOBTYPE_STATUS,
+      page: () => Jobtype_status_View(),
+      binding: Jobtype_status_Binding(),
+    ),
+
+    GetPage(
+      name: _Paths.BOKINGWIZARD,
+      page: () => Booking_Wizard_view(),
+      binding: Booking_Wizard_Binding(),
     ),
 
     /*GetPage(
