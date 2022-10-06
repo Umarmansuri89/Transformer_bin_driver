@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-class TextFieldDesigned extends StatelessWidget {
+class TextFieldDesigned_New extends StatelessWidget {
   final TextEditingController? controller;
   final IconButton? suffixIcon;
   final Icon? prefixIcon;
   final Color? hintStyle;
-  final Color? cursorColor;
   final String hintText;
   final String initialValue;
   final int maxLength, minLines;
@@ -21,7 +20,7 @@ class TextFieldDesigned extends StatelessWidget {
   final FontWeight fontWeight;
   late final String? counterText;
 
-  TextFieldDesigned({
+  TextFieldDesigned_New({
     this.onTap,
     this.readOnly = false,
     this.obscureText = false,
@@ -41,14 +40,13 @@ class TextFieldDesigned extends StatelessWidget {
     this.keyboardType = TextInputType.number,
     this.textAlign = TextAlign.start,
     this.counterText = "",
-    this.cursorColor,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       obscureText: obscureText,
-      cursorColor: cursorColor,
+      cursorColor: Colors.white,
       textCapitalization: TextCapitalization.sentences,
       readOnly: readOnly,
       autovalidateMode: autovalidateMode,
@@ -76,21 +74,21 @@ class TextFieldDesigned extends StatelessWidget {
         hintText: hintText,
         suffixIcon: suffixIcon,
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Color(0xffffffff)),
+          borderSide: BorderSide(color: Color(0xffdedbdb)),
           //36325A
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(25),
         ),
         errorBorder: OutlineInputBorder(
           borderSide: BorderSide(color: Color(0xffFF0000)),
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(25),
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderSide: BorderSide(color: Color(0xffFF0000)),
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(25),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Color(0xffffffff)),
-          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(color: Color(0xffdedbdb)),
+          borderRadius: BorderRadius.circular(25),
         ),
         contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         fillColor: Colors.white,
@@ -100,8 +98,8 @@ class TextFieldDesigned extends StatelessWidget {
 
   Widget counter(BuildContext context,
       {required int currentLength,
-      required int? maxLength,
-      required bool isFocused}) {
+        required int? maxLength,
+        required bool isFocused}) {
     if (isFocused && currentLength > 0) {
       return Text('$currentLength / $maxLength');
     } else {

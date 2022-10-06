@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 import '../../../routes/app_pages.dart';
 
-class Job_list_controler extends GetxController{
+class movements_controller extends GetxController{
   // final count = 0.obs;
   final TextEditingController note_Controller = TextEditingController(text: "");
 

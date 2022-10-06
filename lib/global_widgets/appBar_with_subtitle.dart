@@ -2,7 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-AppBar appbarSubTITLE(String sub_title, Function onTap) =>
+import '../modules/Deliverd_and_uploaded/controllers/Dashboard_screen_controller.dart';
+
+Deshboard_screen_Controller controller = Get.put(Deshboard_screen_Controller());
+
+AppBar appbarSubTITLE(String sub_title,Function onTap,ctx) =>
     AppBar(
       iconTheme: IconThemeData(
         color: Colors.white, //change your color here
@@ -17,7 +21,8 @@ AppBar appbarSubTITLE(String sub_title, Function onTap) =>
           Row(children: <Widget>[
             GestureDetector(
               onTap: () {
-                onTap();
+
+                 //onTap();
                 //Get.back();
               },
               child: Icon(
@@ -28,7 +33,7 @@ AppBar appbarSubTITLE(String sub_title, Function onTap) =>
             ),
             GestureDetector(
               onTap: () {
-                onTap();
+               onTap(controller.selectDatedialog(ctx));
                 print('ssssssssssssss');
               },
               child: Text(
@@ -38,7 +43,7 @@ AppBar appbarSubTITLE(String sub_title, Function onTap) =>
             ),
             GestureDetector(
               onTap: () {
-                onTap();
+              //  onTap();
                 //Get.back();
               },
               child: Icon(
@@ -47,10 +52,22 @@ AppBar appbarSubTITLE(String sub_title, Function onTap) =>
                 size: 20,
               ),
             ),
-          ],)
+          ],),
 
+          GestureDetector(
+            onTap: () {
+              if(controller.IsVisible.isFalse){
 
+                controller.IsVisible(true);
+              }else{
 
+                controller.IsVisible(false);
+              }
+
+            },
+            child: Image.asset("assets/Images/go_to_date.png",fit: BoxFit.fill,height: 30,width: 95,)
+          ),
         ],
       ),
     );
+

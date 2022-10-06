@@ -13,8 +13,8 @@ import '../../../utils/ColorValues.dart';
 
 
 
-class Job_list_View extends StatelessWidget {
-  Job_list_View({Key? key}) : super(key: key);
+class costomers_View extends StatelessWidget {
+  costomers_View({Key? key}) : super(key: key);
 
 
 

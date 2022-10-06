@@ -14,13 +14,26 @@ class Deshboard_screen_Controller extends GetxController {
   final Hide_leading=[].obs;
   final static_Status_list=[0,0,0,0,0,1,0,0,0,0].obs;
 
-  var Colorlist=[].obs;
+  final IsVisible=false.obs;
+
+  var Colorlist = [].obs;
   final current = 0.obs;
-  final dob = "".obs;
+  final dob = "00/00/0000".obs;
   final dateSelected = "".obs;
   final List<GlobalKey<ExpansionTileCardState>> cardKeyList = [];
   final GlobalKey<ExpansionTileCardState> cardB = GlobalKey();
   DateTime currentDate = DateTime.now();
+
+
+  final List<String> genderItems = [
+    'Male',
+    'Female',
+  ];
+
+  final selectedValue=''.obs;
+
+
+
 
   DateTime get selectedDate =>
       DateTime(currentDate.year, currentDate.month, currentDate.day);
@@ -47,6 +60,8 @@ class Deshboard_screen_Controller extends GetxController {
       ),
     );
     if (picked != null) dob.value = formatter.format(picked).toString();
+
+    print(dob.value);
   }
 
   @override

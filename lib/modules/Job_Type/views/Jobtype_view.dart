@@ -36,7 +36,7 @@ class JobtypeView extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     //ApiService.context = context;
     return Scaffold(
-      appBar: appbarSubTITLE("12/12/2022", onTap),
+      appBar: appbarSubTITLE("12/12/2022", onTap,context),
       body: Container(
         margin: const EdgeInsets.all(10),
         child: ListView(

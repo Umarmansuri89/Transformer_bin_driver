@@ -18,7 +18,7 @@ class Payment_due_view extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appbarSubTITLE( "13/07/2022", onTap ),
+      appBar: appbarSubTITLE( "13/07/2022", onTap,context ),
 
       body: ListView(
         children: [
