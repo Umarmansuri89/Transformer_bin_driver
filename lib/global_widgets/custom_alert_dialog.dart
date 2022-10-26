@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:transformer_bin_driver/utils/ColorValues.dart';
 
+import '../modules/Deshboard/controllers/Dashboard_screen_controller.dart';
+
 class CustomAlertDialog extends StatelessWidget {
   final String image;
   final double? fontSize;
@@ -30,6 +32,7 @@ class CustomAlertDialog extends StatelessWidget {
     this.negativeBtnText,
   });
 
+  Deshboard_screen_Controller controller = Get.put(Deshboard_screen_Controller());
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
@@ -39,30 +42,65 @@ class CustomAlertDialog extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Image.asset(image,height: imagehight,width: imagewidth,),
-          Container(
-              decoration: BoxDecoration(
-                color: const Color(0xffF79534),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child:
-              Padding(
-                padding: EdgeInsets.all(05),
-                child: title != null ? Text(title!,style: TextStyle(color: ColorValues.white,fontSize: fontSize),) : null,
+          GestureDetector(
+            onTap: (){
+              if(controller.bin_payment_status.isNotEmpty){
+                controller.getFromCamera();
+              }else{
+                Get.snackbar(
+                  'Please Select Payment Status',
+                  "",
+                  snackPosition: SnackPosition.BOTTOM,
+                  backgroundColor: Color(0xFFEC8B29),
+                  colorText: Colors.white,
+                  borderRadius: 5,
+                  duration: Duration(seconds: 6),
+                );
+              }
+             },
+            child:  Container(
+                  decoration: BoxDecoration(
+                    color: const Color(0xffF79534),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child:
+                  Padding(
+                    padding: EdgeInsets.all(05),
+                    child: title != null ? Text(title!,style: TextStyle(color: ColorValues.white,fontSize: fontSize),) : null,
+                  )
               )
           ),
-          Container(
-              decoration: BoxDecoration(
-                color: const Color(0xffF79534),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child:
-              Padding(
-                padding: EdgeInsets.all(05),
-                child: title1 != null ? Text(title1!,style: TextStyle(color: ColorValues.white,fontSize: fontSize),) : null,
+          GestureDetector(
+              onTap: (){
+
+                if(controller.bin_payment_status.isNotEmpty){
+                  controller.getFromGallery();
+                }else{
+                  Get.snackbar(
+                    'Please Select Payment Status',
+                    "",
+                    snackPosition: SnackPosition.BOTTOM,
+                    backgroundColor: Color(0xFFEC8B29),
+                    colorText: Colors.white,
+                    borderRadius: 5,
+                    duration: Duration(seconds: 6),
+                  );
+                }
+
+              },
+              child:  Container(
+                  decoration: BoxDecoration(
+                    color: const Color(0xffF79534),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child:
+                  Padding(
+                    padding: EdgeInsets.all(05),
+                    child: title1 != null ? Text(title1!,style: TextStyle(color: ColorValues.white,fontSize: fontSize),) : null,
+                  )
+
               )
-
-          )
-
+          ),
 
         ],),
 

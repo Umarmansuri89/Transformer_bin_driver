@@ -27,7 +27,7 @@ class New_password_controller extends GetxController {
 
       Get.snackbar('Password Not Match', '',
         snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: Color(0xffEC297B),
+        backgroundColor: Color(0xffec8b29),
         // padding: EdgeInsets.symmetric(
         //     vertical: 5,horizontal: 5
         // ),
@@ -66,7 +66,7 @@ class New_password_controller extends GetxController {
 
         Get.snackbar('New Password Set Successfully', '',
           snackPosition: SnackPosition.BOTTOM,
-          backgroundColor: Color(0xffEC297B),
+          backgroundColor: Color(0xffec8b29),
           // padding: EdgeInsets.symmetric(
           //     vertical: 5,horizontal: 5
           // ),
@@ -80,7 +80,7 @@ class New_password_controller extends GetxController {
 
         Get.snackbar(response['message'].toString(), '',
           snackPosition: SnackPosition.BOTTOM,
-          backgroundColor: Color(0xffEC297B),
+          backgroundColor: Color(0xffec8b29),
           padding: EdgeInsets.symmetric(
               vertical: 5,horizontal: 5
           ),

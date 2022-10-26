@@ -2,13 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../modules/Deliverd_and_uploaded/controllers/Dashboard_screen_controller.dart';
+import '../modules/Deshboard/controllers/Dashboard_screen_controller.dart';
 
 Deshboard_screen_Controller controller = Get.put(Deshboard_screen_Controller());
 
-AppBar appbarSubTITLE(String sub_title,Function onTap,ctx) =>
+AppBar appbarSubTITLE(String sub_title,Function onTap,ctx,isTrue) =>
     AppBar(
-      iconTheme: IconThemeData(
+      iconTheme: const IconThemeData(
         color: Colors.white, //change your color here
       ),
       elevation: 0,
@@ -21,9 +21,8 @@ AppBar appbarSubTITLE(String sub_title,Function onTap,ctx) =>
           Row(children: <Widget>[
             GestureDetector(
               onTap: () {
-
-                 //onTap();
-                //Get.back();
+                  onTap();
+               // Get.back();
               },
               child: Icon(
                 Icons.arrow_back_ios_sharp,
@@ -33,7 +32,7 @@ AppBar appbarSubTITLE(String sub_title,Function onTap,ctx) =>
             ),
             GestureDetector(
               onTap: () {
-               onTap(controller.selectDatedialog(ctx));
+                onTap(controller.selectDatedialog(ctx));
                 print('ssssssssssssss');
               },
               child: Text(
@@ -43,7 +42,7 @@ AppBar appbarSubTITLE(String sub_title,Function onTap,ctx) =>
             ),
             GestureDetector(
               onTap: () {
-              //  onTap();
+               onTap();
                 //Get.back();
               },
               child: Icon(
@@ -54,9 +53,11 @@ AppBar appbarSubTITLE(String sub_title,Function onTap,ctx) =>
             ),
           ],),
 
+          isTrue==true?
           GestureDetector(
             onTap: () {
               if(controller.IsVisible.isFalse){
+
 
                 controller.IsVisible(true);
               }else{
@@ -66,7 +67,8 @@ AppBar appbarSubTITLE(String sub_title,Function onTap,ctx) =>
 
             },
             child: Image.asset("assets/Images/go_to_date.png",fit: BoxFit.fill,height: 30,width: 95,)
-          ),
+          ):
+              Container()
         ],
       ),
     );

@@ -47,8 +47,4 @@ class Job_list_controler extends GetxController{
 
   void increment() => count.value++;
 
-  // void onDashboard() async {
-  //   Get.toNamed(Routes.INFORMTION);
-  // }
-
 }

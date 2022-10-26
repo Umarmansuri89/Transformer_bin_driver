@@ -36,7 +36,7 @@ class Otp_controller extends GetxController {
 
       Get.snackbar("OTP Verified", '',
         snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: Color(0xffEC297B),
+        backgroundColor: Color(0xffec8b29),
         padding: EdgeInsets.symmetric(
             vertical: 5,horizontal: 5
         ),
@@ -51,7 +51,7 @@ class Otp_controller extends GetxController {
 
       Get.snackbar("Wrong OTP", '',
         snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: Color(0xffEC297B),
+        backgroundColor: Color(0xffec8b29),
         padding: EdgeInsets.symmetric(
             vertical: 5,horizontal: 5
         ),

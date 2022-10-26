@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import '../../../global_widgets/textEnter.dart';
 import '../../../routes/app_pages.dart';
@@ -57,10 +58,7 @@ class SplashView extends GetView<SplashController> {
 
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                          child: Image.asset(
-                            SPLASH_LOGO,
-                            width: 200,
-                          ),
+                          child:  SvgPicture.asset("assets/Images/Frame.svg",height: MediaQuery.of(context).size.height/2,)
                         ),
 
                       ],

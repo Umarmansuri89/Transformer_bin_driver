@@ -5,6 +5,8 @@ class ColorValues {
   static const Color info_text_color = Color(0xFF2E2E2E);
   static const Color Lite_black = Color(0xFFB8B8B8);
   static const Color Down_list = Color(0xFF3987CF);
+  static const Color Down_list_pickup = Color(0xFF6DC965);
+  static const Color Down_list_exchange = Color(0xFF63CFDE);
   //static const Color info_text_color = Color(0xFF2E2E2E);
   static const Color background_divider_color = Color(0xFFF79534);
   static const Color green_color = Color(0xff6DC965);

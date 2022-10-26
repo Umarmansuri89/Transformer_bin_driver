@@ -24,6 +24,7 @@ abstract class Routes {
   static const FORGOT_PASSWORD = _Paths.FORGOT_PASSWORD;
   static const OTP = _Paths.OTP;
   static const NEW_PASSWORD = _Paths.NEW_PASSWORD;
+  static const GOOGLE_MEP = _Paths.GOOGLE_MEP;
 
 
 
@@ -52,6 +53,7 @@ abstract class _Paths {
   static const FORGOT_PASSWORD = '/Forgotpassword';
   static const OTP = '/otp';
   static const NEW_PASSWORD = '/new_password';
+  static const GOOGLE_MEP = '/google_mep_full';
 
 
 

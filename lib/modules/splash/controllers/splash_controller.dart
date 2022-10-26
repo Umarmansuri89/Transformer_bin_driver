@@ -11,6 +11,7 @@ class SplashController extends GetxController {
   void onInit() {
     print("==============next");
     super.onInit();
+
     Future.delayed(Duration(seconds: 5), navigateUser);
   }
 
@@ -27,15 +28,15 @@ class SplashController extends GetxController {
   void navigateUser() async {
     print("==============next");
 
-    Get.offAllNamed(Routes.LOGIN);
-   /* SharedPreferences prefs = await SharedPreferences.getInstance();
+    //Get.offAllNamed(Routes.LOGIN);
+    SharedPreferences prefs = await SharedPreferences.getInstance();
     var loginstatus=prefs.getString('loginstatus');
     String status = SharedPreferencesUtils.getString(SDConstant.token).toString();
     print("status"+status);
 
     loginstatus=="true"
-        ? Get.offAllNamed(Routes.DASHBOARD)
-        : Get.offAllNamed(Routes.LOGIN);*/
+        ? Get.offAllNamed(Routes.DASHBOARD_SCREEN)
+        : Get.offAllNamed(Routes.LOGIN);
   }
 
 }

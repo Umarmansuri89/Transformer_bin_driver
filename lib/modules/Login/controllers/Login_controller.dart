@@ -45,10 +45,11 @@ class LoginController extends GetxController {
           prefs.setString(SDConstant.isLogin, "true");
           prefs.setString('loginstatus', "true");
           prefs.setString('User_id', response['data']['userid'].toString());
+          prefs.setString('User_name', response['data']['name'].toString());
 
           Get.snackbar('Login Successfully', '',
             snackPosition: SnackPosition.BOTTOM,
-            backgroundColor: Color(0xffEC297B),
+            backgroundColor: Color(0xffec8b29),
             padding: EdgeInsets.symmetric(
                 vertical: 5,horizontal: 5
             ),
@@ -63,7 +64,7 @@ class LoginController extends GetxController {
 
           Get.snackbar(response['message'].toString(), '',
             snackPosition: SnackPosition.BOTTOM,
-            backgroundColor: Color(0xffEC297B),
+            backgroundColor: Color(0xffec8b29),
             padding: EdgeInsets.symmetric(
                 vertical: 5,horizontal: 5
             ),

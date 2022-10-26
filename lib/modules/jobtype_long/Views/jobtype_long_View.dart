@@ -1,16 +1,19 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-
+import 'package:url_launcher/url_launcher.dart';
+import '../../../global_widgets/CustomAlertDialog_one.dart';
 import '../../../global_widgets/Text_field_information.dart';
 import '../../../global_widgets/appBar_with_subtitle.dart';
 import '../../../global_widgets/custom_alert_dialog.dart';
+import '../../../global_widgets/google_mep_place.dart';
 import '../../../global_widgets/textEnter.dart';
 import '../../../routes/app_pages.dart';
 import '../../../utils/ColorValues.dart';
 import '../../../utils/image_helper.dart';
-import '../../Deliverd_and_uploaded/controllers/Dashboard_screen_controller.dart';
+import '../../Deshboard/controllers/Dashboard_screen_controller.dart';
 import '../Controller/jobtype_long_controller.dart';
 
 class jobtype_long_View extends StatelessWidget {
@@ -45,12 +48,12 @@ class jobtype_long_View extends StatelessWidget {
           }
           else {
             return  Scaffold(
-              appBar: appbarSubTITLE(controller1.dob.toString(), onTap,context),
+              appBar: appbarSubTITLE(controller1.dob.toString(), onTap,context,false),
               body: Container(
                 margin: const EdgeInsets.all(10),
                 child: ListView(
                   children: [
-                    controller1.IsVisible==true?
+                   /* controller1.IsVisible==true?
                     Column(children: <Widget>[
                       Padding(
                         padding: EdgeInsets.only(left: 10,right: 10,top: 10),
@@ -102,7 +105,7 @@ class jobtype_long_View extends StatelessWidget {
                                     .toList(),
                                 validator: (value) {
                                   if (value == null) {
-                                    return 'Please select gender.';
+                                    return 'Please select ';
                                   }
                                 },
                                 onChanged: (value) {
@@ -263,7 +266,7 @@ class jobtype_long_View extends StatelessWidget {
                       )
                     ],)
                         :
-                    SizedBox(),
+                    SizedBox(),*/
                     Padding(
                       padding: const EdgeInsets.symmetric(
                           vertical: 10,
@@ -273,25 +276,199 @@ class jobtype_long_View extends StatelessWidget {
                         children: [
                           Row(
                             children: [
-                              GestureDetector(
-                                onTap:(){
-                                  showAlertDialog(context);
-                                },
-                                child: CircleAvatar(
-                                  radius: 10,
-                                  backgroundColor:ColorValues.green_color,
-                                ),
+                              if(controller.job_status.value=="0")(
+                                  GestureDetector(
+                                    onTap: (){
+                                      controller.Delivery_status.value="3";
+                                      CustomAlertDialog(context);
+                                    },
+                                    child:  Row(children: [
+                                      Padding(
+                                        padding: EdgeInsets.only(left: 00),
+                                        child: CircleAvatar(
+                                          radius: 10,
+                                          backgroundColor:ColorValues.Lite_black,
+                                        ),
+                                      ),
+                                      Container(
+                                        margin: const EdgeInsets.only(left: 5,top: 8),
+                                        child: TextFieldShow(
+                                          text: "Delivered",
+                                          color:ColorValues.Lite_black,
+                                          fontsize: 13,
+                                          fontWeight: FontWeight.w700,
+                                        ),
+                                      ),
+                                    ],),
+                                  )
+
+                              )else if(controller.job_status.value=="1")(
+                                   GestureDetector(
+                    onTap: (){
+                      controller.Delivery_status.value="4";
+                      CustomAlertDialog(context);
+                    },
+                    child:    Row(children: [
+                      Padding(
+                        padding: EdgeInsets.only(left: 00),
+                        child: CircleAvatar(
+                          radius: 10,
+                          backgroundColor:ColorValues.Lite_black,
+                        ),
+                      ),
+                      Container(
+                        margin: const EdgeInsets.only(left: 5,top: 8),
+                        child: TextFieldShow(
+                          text: "Pick Up",
+                          color:ColorValues.Lite_black,
+                          fontsize: 13,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ],)
+                  )
+                               )else if(controller.job_status.value=="2")(
+                                   GestureDetector(
+                    onTap: (){
+                      controller.Delivery_status.value="5";
+                      CustomAlertDialog(context);
+                    },
+                    child:     Row(children: [
+                      Padding(
+                        padding: EdgeInsets.only(left: 00),
+                        child: CircleAvatar(
+                          radius: 10,
+                          backgroundColor:ColorValues.Lite_black,
+                        ),
+                      ),
+                      Container(
+                        margin: const EdgeInsets.only(left: 5,top: 8),
+                        child: TextFieldShow(
+                          text: "Exchange",
+                          color:ColorValues.Lite_black,
+                          fontsize: 13,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ],)
+                )
+                              )else if(controller.job_status.value=="3")(
+                                  Row(children: [
+                                    const Padding(
+                                      padding: EdgeInsets.only(left: 00),
+                                      child: CircleAvatar(
+                                        radius: 10,
+                                        backgroundColor:ColorValues.green_color,
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: const EdgeInsets.only(left: 5,top: 8),
+                                      child: TextFieldShow(
+                                        text: "Delivered",
+                                        color:ColorValues.green_color,
+                                        fontsize: 13,
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ],)
+                              )else if(controller.job_status.value=="4")(
+                                  Row(children: [
+                                    const Padding(
+                                      padding: EdgeInsets.only(left: 00),
+                                      child: CircleAvatar(
+                                        radius: 10,
+                                        backgroundColor:ColorValues.green_color,
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: const EdgeInsets.only(left: 5,top: 8),
+                                      child: TextFieldShow(
+                                        text: "Pickuped",
+                                        color:ColorValues.green_color,
+                                        fontsize: 13,
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ],)
+                              )else if(controller.job_status.value=="5")(
+                                  Row(children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 00),
+                                      child: CircleAvatar(
+                                        radius: 10,
+                                        backgroundColor:ColorValues.green_color,
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: const EdgeInsets.only(left: 5,top: 8),
+                                      child: TextFieldShow(
+                                        text: "Exchanged",
+                                        color:ColorValues.green_color,
+                                        fontsize: 13,
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ],)
+                              )else if(controller.job_status.value=="6")(
+                                  Row(children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 00),
+                                      child: CircleAvatar(
+                                        radius: 10,
+                                        backgroundColor:ColorValues.red_color,
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: const EdgeInsets.only(left: 5,top: 8),
+                                      child: TextFieldShow(
+                                        text: "Reject delivery",
+                                        color:ColorValues.red_color,
+                                        fontsize: 13,
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ],)
+                              )else if(controller.job_status.value=="7")(
+                                  Row(children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 00),
+                                      child: CircleAvatar(
+                                        radius: 10,
+                                        backgroundColor:ColorValues.red_color,
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: const EdgeInsets.only(left: 5,top: 8),
+                                      child: TextFieldShow(
+                                        text: "Reject pickup",
+                                        color:ColorValues.red_color,
+                                        fontsize: 13,
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ],)
+                              )else if(controller.job_status.value=="8")(
+                                  Row(children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 00),
+                                      child: CircleAvatar(
+                                        radius: 10,
+                                        backgroundColor:ColorValues.red_color,
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: const EdgeInsets.only(left: 5,top: 8),
+                                      child: TextFieldShow(
+                                        text: "Reject Exchange",
+                                        color:ColorValues.red_color,
+                                        fontsize: 13,
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ],)
                               ),
 
-                              Container(
-                                margin: const EdgeInsets.only(left: 5,top: 5),
-                                child: TextFieldShow(
-                                  text: "Delivered ",
-                                  color:ColorValues.green_color,
-                                  fontsize: 13,
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
+
                               GestureDetector(
                                   onTap: (){
                                     showDialog<String>(
@@ -309,20 +486,23 @@ class jobtype_long_View extends StatelessWidget {
                                                 child: Container(
                                                   height: 385,
                                                   width:374,
-                                                  child: Image.asset("assets/Images/carton.png"),
+                                                  child: Image.network(controller.product_image.value),
                                                 ),
                                               ),
                                             ],
-
                                           ),
-
                                     );
-
                                   },
                                   child: const Icon(Icons.attach_file,size: 18,color: Colors.grey))
                             ],
                           ),
-                          const Icon(Icons.arrow_back_ios_new, color: ColorValues.background_divider_color,)
+                          GestureDetector(
+                            onTap: (){
+                              Get.back();
+                            },
+                            child:  const Icon(Icons.arrow_back_ios_new, color: ColorValues.background_divider_color,),
+                          )
+
                         ],
                       ),
                     ),
@@ -332,7 +512,7 @@ class jobtype_long_View extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           TextFieldShow(
-                            text: "2m Leopold",
+                            text: ""+controller.product_name.value,
                             color: ColorValues.info_text_color,
                             fontsize: 21,
                             fontWeight: FontWeight.w600,
@@ -377,12 +557,12 @@ class jobtype_long_View extends StatelessWidget {
                                 color: Colors.black,
                                 borderRadius: BorderRadius.circular(20),
                               ),
-                              items: controller.genderItems
+                              items: controller1.PaymentList
                                   .map((item) =>
                                   DropdownMenuItem<String>(
-                                    value: item,
+                                    value: item.name,
                                     child: Text(
-                                      item,
+                                      item.name,
                                       style: const TextStyle(
                                        color: Colors.white,
                                         fontSize: 14,
@@ -396,10 +576,14 @@ class jobtype_long_View extends StatelessWidget {
                                 }
                               },
                               onChanged: (value) {
+                                controller.bin_payment_status.value = value.toString();
+
+                                print("bin_payment_status========+${controller.bin_payment_status.value}");
+
                                 //Do something when changing the item if you want.
                               },
                               onSaved: (value) {
-                                controller.selectedValue.value = value.toString();
+                                controller.bin_payment_status.value = value.toString();
                               },
                             ),
                           ),
@@ -417,7 +601,7 @@ class jobtype_long_View extends StatelessWidget {
                           ),
 
                           child: TextFieldShow(
-                            text: "#8422",
+                            text: "#"+controller.id.toString(),
                             color: ColorValues.info_text_color,
                             fontsize: 14,
                             fontWeight: FontWeight.w300,
@@ -425,43 +609,83 @@ class jobtype_long_View extends StatelessWidget {
 
                         ),
 
-                        Padding(
+                        GestureDetector(
+                          onTap: (){
+                            controller.Send_rercipt(controller.order_number.value);                          },
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 10
+                            ),
 
-                          padding: EdgeInsets.symmetric(
+                            child: TextFieldShow(
+                              text: "Issue Receipt",
+                              color: ColorValues.info_text_color,
+                              fontsize: 14,
+                              fontWeight: FontWeight.w600,
+                            ),
 
-                              horizontal: 10
                           ),
-
-                          child: TextFieldShow(
-                            text: "Issue Receipt",
-                            color: ColorValues.info_text_color,
-                            fontsize: 14,
-                            fontWeight: FontWeight.w600,
-                          ),
-
                         ),
+
+
                       ],
 
                     ),
                     Padding(
-                      padding:const EdgeInsets.symmetric( horizontal: 7),
-
+                      padding: EdgeInsets.all(0),
                       child: Card(
-                        clipBehavior: Clip.antiAliasWithSaveLayer,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(7.0),
-                        ),
+                          clipBehavior: Clip.antiAliasWithSaveLayer,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(7.0),
+                          ),
+                          child:
+                          Stack(
+                            alignment: Alignment.bottomLeft,
+                            children: <Widget>[
+                              Container(
+                                height: 180,
+                                width: double.infinity,
+                                child: Googlemep1(controller),
+                              ),
+                              GestureDetector(
+                                onTap: (){
+                                  print("========");
+                                  var data={
+                                    "let": controller.latitude.toString(),
+                                    "long": controller.longitude.toString(),
+                                    "address":controller.customer_address.toString(),
+                                  };
+                                  Get.toNamed(Routes.GOOGLE_MEP,parameters: data);
+                                },
+                                child:  Padding(
+                                  padding: EdgeInsets.all(05),
+                                  child: Container(
+                                    padding: EdgeInsets.only(left: 10,right: 10,top: 5,bottom: 0),
+                                    decoration: BoxDecoration(
+                                      color: ColorValues.background_divider_color,
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: TextFieldShow(
+                                      height: 1,
+                                      text: "GET DIRECTIONS",
+                                      color: Colors.white,
+                                      fontsize: 12,
+                                      fontFamily: 'Lato',
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ],
+                          )
 
-                        child: Image.network("https://media.wired.com/photos/59269cd37034dc5f91bec0f1/191:100/w_1280,c_limit/GoogleMapTA.jpg",
-                          fit: BoxFit.fill,
-                          height: 180,),
                       ),
                     ),
 
                     Padding(
                       padding: EdgeInsets.only(left: 12,right: 12,top: 16),
                       child:  TextFieldShow(
-                        text: "49 Pienza Way Leopold",
+                        text: controller.product_name.value,
                         color: ColorValues.info_text_color,
                         fontsize: 17,
                         fontWeight: FontWeight.w600,
@@ -493,7 +717,7 @@ class jobtype_long_View extends StatelessWidget {
                           child: Container(
                             margin: const EdgeInsets.only(top: 5, right: 10),
                             child: TextFieldShow(
-                              text: "Skip Bin Heavy Waste",
+                              text: controller.waste_type.value,
                               color:ColorValues.info_text_color,
                               fontsize: 14,
                               fontWeight: FontWeight.w400,
@@ -522,7 +746,7 @@ class jobtype_long_View extends StatelessWidget {
                           child: Container(
                             margin: const EdgeInsets.only(top: 5, right: 10),
                             child: TextFieldShow(
-                              text: "2m",
+                              text: controller.product_size.value="m",
                               color: ColorValues.info_text_color,
                               fontsize: 14,
                               fontWeight: FontWeight.w400,
@@ -551,7 +775,7 @@ class jobtype_long_View extends StatelessWidget {
                           child: Container(
                             margin: const EdgeInsets.only(top: 5, right: 10),
                             child: TextFieldShow(
-                              text: "2m",
+                              text: controller.bin_type.value,
                               color:ColorValues.info_text_color,
                               fontsize: 14,
                               fontWeight: FontWeight.w400,
@@ -580,7 +804,7 @@ class jobtype_long_View extends StatelessWidget {
                           child: Container(
                             margin: const EdgeInsets.only(top: 5, right: 10),
                             child: TextFieldShow(
-                              text: "15/06/2022",
+                              text: controller.scheduled_date.value,
                               color: ColorValues.info_text_color,
                               fontsize: 14,
                               fontWeight: FontWeight.w400,
@@ -615,7 +839,7 @@ class jobtype_long_View extends StatelessWidget {
                           child: Container(
                             margin: const EdgeInsets.only(top: 15, right: 10),
                             child: TextFieldShow(
-                              text: "290.00 inc gst",
+                              text: controller.amount.value+"inc gst",
                               color: ColorValues.info_text_color,
                               fontsize: 14,
                               fontWeight: FontWeight.w400,
@@ -645,7 +869,7 @@ class jobtype_long_View extends StatelessWidget {
                           child: Container(
                             margin: const EdgeInsets.only(top: 5, right: 10),
                             child: TextFieldShow(
-                              text: "290.00 inc gst",
+                              text: controller.outstanding.value+"inc gst",
                               color: ColorValues.info_text_color,
                               fontsize: 14,
                               fontWeight: FontWeight.w400,
@@ -674,7 +898,7 @@ class jobtype_long_View extends StatelessWidget {
                           child: Container(
                             margin: const EdgeInsets.only(top: 5, right: 10),
                             child: TextFieldShow(
-                              text: "EFT",
+                              text: controller.payment_mode.value,
                               color: ColorValues.info_text_color,
                               fontsize: 14,
                               fontWeight: FontWeight.w400,
@@ -708,7 +932,7 @@ class jobtype_long_View extends StatelessWidget {
                           child: Container(
                             margin: const EdgeInsets.only(top: 15, right: 10),
                             child:TextFieldShow(
-                              text: "John Lyng Group EBN \nJVA29219, J/n  221660012",
+                              text: ""+controller.customer_name.value,
                               color:ColorValues.info_text_color,
                               fontsize: 14,
                               fontWeight: FontWeight.w400,
@@ -738,7 +962,7 @@ class jobtype_long_View extends StatelessWidget {
                           child: Container(
                             margin: const EdgeInsets.only(top: 5, right: 10),
                             child: TextFieldShow(
-                              text: "",
+                              text: controller.customer_company_name.value,
                               color: ColorValues.info_text_color,
                               fontsize: 14,
                               fontWeight: FontWeight.w400,
@@ -767,7 +991,7 @@ class jobtype_long_View extends StatelessWidget {
                           child: Container(
                             margin: const EdgeInsets.only(top: 5, right: 10),
                             child: TextFieldShow(
-                              text: "EFT",
+                              text: controller.customer_mobile.value,
                               color:ColorValues.info_text_color,
                               fontsize: 14,
                               fontWeight: FontWeight.w400,
@@ -796,10 +1020,10 @@ class jobtype_long_View extends StatelessWidget {
                           child: Container(
                             margin: const EdgeInsets.only(top: 5, right: 10, bottom: 10),
                             child: TextFieldShow(
-                              text: "0401647343",
+                              text: controller.customer_mobile.value,
                               color: ColorValues.info_text_color,
                               fontsize: 14,
-                              fontWeight: FontWeight.w400,
+                              fontWeight: FontWeight.normal,
                             ),
                           ),
                         )
@@ -814,7 +1038,7 @@ class jobtype_long_View extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
-                          margin: const EdgeInsets.only(top: 10, left: 10, bottom: 10),
+                          margin: const EdgeInsets.only(top: 15, left: 10, bottom: 10),
                           child: TextFieldShow(
                             text: "Notes",
                             color: ColorValues.grey_color,
@@ -825,16 +1049,22 @@ class jobtype_long_View extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            Container(
-                              margin: const EdgeInsets.only(top: 10,right: 10),
-                              child: const Icon(
-                                Icons.phone_rounded, size: 20,color: ColorValues.info_text_color,
+                            GestureDetector(
+                              onTap: (){
+                             controller.callNumber();
+                              },
+                              child: Container(
+                                margin: const EdgeInsets.only(top: 10,right: 10),
+                                child:  SvgPicture.asset("assets/Images/call.svg",),
                               ),
                             ),
-                            Container(
-                              margin: const EdgeInsets.only(top: 10,right: 10),
-                              child: const Icon(
-                                Icons.message_sharp,color: ColorValues.info_text_color, size: 20,
+                            GestureDetector(
+                              onTap: (){
+                               controller.sendSMS1();
+                              },
+                              child: Container(
+                                margin: const EdgeInsets.only(top: 10,right: 10),
+                                child:  SvgPicture.asset("assets/Images/sms.svg",),
                               ),
                             ),
                           ],
@@ -866,91 +1096,80 @@ class jobtype_long_View extends StatelessWidget {
                         readOnly: false,
                         keyboardType: TextInputType.text,
 
-                        // prefixIcon: Icon(
-                        //   Icons.email_outlined,
-                        //   color: Color(0xffCCD2E3),
-                        //   size: 16.0,
-                        // ),
                       ),
                     ),
-                    Row(
-                      children: [
-                        Container(
-
-                          padding: const EdgeInsets.only(left: 5, right: 5, top: 5,),
-                          margin: const EdgeInsets.only(left: 10, top: 0),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            color: ColorValues.background_divider_color,
-                          ),
-                          child: TextFieldShow(
-                            text: "LOG NOTE",
-                            color: ColorValues.button_info_text_color,
-                            fontsize: 10,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        )
-                      ],
-                    ),
 
                     Row(
                       children: [
-                        Expanded(
-                          flex: 1,
-                          child: Container(
-                            margin: const EdgeInsets.only(top: 15, left: 10, bottom: 5),
-                            child:TextFieldShow(
-                              text: "01/12/2022",
-                              color: ColorValues.info_text_color,
-                              fontsize: 16,
-                              fontWeight: FontWeight.w600,
+                        GestureDetector(
+                          onTap: (){
+                            controller.Add_nots(controller1.DriverID.toString(), controller.id.toString());
+                          },
+                          child:  Container(
+
+                            margin: EdgeInsets.only(left: 10,bottom: 05),
+                            padding: const EdgeInsets.only(left: 10, right: 10, top: 5,),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: ColorValues.background_divider_color,
                             ),
-                          ),
-                        ),
-                        Expanded(
-                          flex: 1,
-                          child: Container(
-                            margin: const EdgeInsets.only(top: 15, right: 10, bottom: 5),
-                            child:TextFieldShow(
-                              text: "01/12/2022",
-                              color: ColorValues.info_text_color,
-                              fontsize: 16,
-                              fontWeight: FontWeight.w400,
+                            child: TextFieldShow(
+                              text: "LOG NOTE",
+                              color: ColorValues.button_info_text_color,
+                              fontsize: 10,
+                              fontWeight: FontWeight.w700,
                             ),
                           ),
                         )
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                          flex: 1,
-                          child: Container(
-                            margin: const EdgeInsets.only(top: 5, left: 10, bottom: 10),
-                            child:TextFieldShow(
-                              text: "02/12/2022",
-                              color: ColorValues.info_text_color,
-                              fontsize: 16,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          flex: 1,
-                          child: Container(
-                            margin: const EdgeInsets.only(top: 5, right: 10, bottom: 10),
-                            child:TextFieldShow(
-                              text: "01/12/2022",
-                              color: ColorValues.info_text_color,
-                              fontsize: 16,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                        )
+
                       ],
                     ),
 
 
+                    Container(
+                      child:ListView.builder(
+                        itemCount: controller.Note_items.length,
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemBuilder: (BuildContext context, int index) {
+                          return
+                            Column(
+                              children: <Widget>[
+                                Row(
+                                  children: [
+                                    Expanded(
+                                      flex: 1,
+                                      child: Container(
+                                        margin: const EdgeInsets.only(top: 05, left: 10, bottom: 5),
+                                        child:TextFieldShow(
+                                          text: "${controller.Note_items[index].date}",
+                                          color: ColorValues.info_text_color,
+                                          fontsize: 16,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      flex: 1,
+                                      child: Container(
+                                        margin: const EdgeInsets.only(top: 05, right: 10, bottom: 5),
+                                        child:TextFieldShow(
+                                          text: "${controller.Note_items[index].note}",
+                                          color: ColorValues.info_text_color,
+                                          fontsize: 16,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                Divider()
+                              ],
+                            );
+
+                        },
+                      ),
+                    )
                   ],
 
                 ),
@@ -959,16 +1178,12 @@ class jobtype_long_View extends StatelessWidget {
           }
         }),
       );
-
-
-
   }
-
-  void showAlertDialog(BuildContext context) {
+  void CustomAlertDialog(BuildContext context) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
-        return CustomAlertDialog(
+        return CustomAlertDialog_one(
           imagehight: 40.0,
           imagewidth: 40.0,
           image: add_a_photo,

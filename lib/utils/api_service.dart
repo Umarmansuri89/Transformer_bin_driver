@@ -1,36 +1,40 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:http/http.dart' as http;
-// import 'package:shyam_trust_flutter/app/model/Event_details_model.dart';
+
+import '../global_widgets/progress_dialog.dart';
 
 class ApiService {
- static late final BuildContext context;
+  static late final BuildContext context;
   /*-----------------SHYAM TRUST---------------------------*/
   static const String BASE_URL = "https://xugar.me/demo/mock/transformer-bin-hire/Apicontroller/";
 
   static const String Login_api = "login";
   static const String forgetpassword_api = "forgetpassword";
   static const String resetpassword_api = "resetpassword";
+  static const String MY_JOBS = "GetMyJobs";
+  static const String UPDATE_JOB_STATUS = "update_status";
+  static const String Get_Job_Detail = "GetJobDetail";
+  static const String Year_List = "YearList";
+  static const String Get_Payment_status = "Payment_status";
+  static const String AddNotes = "/AddNotes";
+  static const String GetNotes = "/GetNotes";
+  static const String SendReceipt  = "/SendReceipt";
+  static const String risk  = "http://testpnp.ml/stallion_new/api/risk_profile";
 
 
-  /* //sanbox
-  static final String cftokengenerate =
-      "https://test.cashfree.com/api/v2/cftoken/order";
-  static final String APPLICATION_ID = "111004fd8c8e4a74cdebd5fb21400111";
-  static final String SECRET_ID = "b5ed1f01151ebf4f7c03b60cd080b6d686202bc3";*/
-
-//live
-
-  /*----------------EYE KANDY---------------------------*/
+  /*-------------------------------------------*/
 
   Future Login(email,password) async {
     final response = await http.post(
-      Uri.parse(BASE_URL + Login_api),
-      body: ({
-              'email': email,
-            'password': password
-      })
+        Uri.parse(BASE_URL + Login_api),
+        body: ({
+          'email': email,
+          'password': password
+        })
       //headers: {HttpHeaders.acceptHeader: "application/json"},
     );
     var ConvertDataToJson = jsonDecode(response.body);
@@ -64,5 +68,132 @@ class ApiService {
     var ConvertDataToJson = jsonDecode(response.body);
     return ConvertDataToJson;
   }
+
+
+  Future my_jobs(user_id,date) async {
+    print("api=====+++++=======$date");
+    final response = await http.post(
+        Uri.parse(BASE_URL + MY_JOBS),
+        body: ({
+          'user_id': user_id,
+          'date': date
+        })
+      //headers: {HttpHeaders.acceptHeader: "application/json"},
+    );
+    var ConvertDataToJson = jsonDecode(response.body);
+    return ConvertDataToJson;
+  }
+
+  Future Notes(driver_id,job_id,note) async {
+    print("api=====+++++=======$driver_id");
+    print("api=====+++++=======$job_id");
+    print("api=====+++++=======$note");
+    final response = await http.post(
+        Uri.parse(BASE_URL + AddNotes),
+        body: ({
+          'driver_id': driver_id,
+          'job_id': job_id,
+          'note': note,
+        })
+      //headers: {HttpHeaders.acceptHeader: "application/json"},
+    );
+    var ConvertDataToJson = jsonDecode(response.body);
+    return ConvertDataToJson;
+  }
+
+
+  Future GetNote(driver_id,job_id) async {
+    print("api=====+++++=======$driver_id");
+    print("job_idapi=====+++++=======$job_id");
+    final response = await http.post(
+        Uri.parse(BASE_URL + GetNotes),
+        body: ({
+          'driver_id': driver_id,
+          'job_id': job_id,
+        })
+      //headers: {HttpHeaders.acceptHeader: "application/json"},
+    );
+    var ConvertDataToJson = jsonDecode(response.body);
+    return ConvertDataToJson;
+  }
+
+
+  Future Get_Year_List() async {
+    final response = await http.get(
+      Uri.parse(BASE_URL + Year_List),
+      //headers: {HttpHeaders.acceptHeader: "application/json"},
+    );
+    var ConvertDataToJson = jsonDecode(response.body);
+    return ConvertDataToJson;
+  }
+
+
+  Future Get_Payment_List() async {
+    final response = await http.get(
+      Uri.parse(BASE_URL + Get_Payment_status),
+      //headers: {HttpHeaders.acceptHeader: "application/json"},
+    );
+    var ConvertDataToJson = jsonDecode(response.body);
+    return ConvertDataToJson;
+  }
+
+
+  Future GetJobDetail(job_id,user_id) async {
+    print("api=====+++++=======$job_id");
+    print("api=====+++++=======$user_id");
+    final response = await http.post(
+        Uri.parse(BASE_URL + Get_Job_Detail),
+        body: ({
+          'job_id': job_id,
+          'user_id': user_id,
+        })
+      //headers: {HttpHeaders.acceptHeader: "application/json"},
+    );
+    var ConvertDataToJson = jsonDecode(response.body);
+    return ConvertDataToJson;
+  }
+
+
+  Future Send_Receipt(order_number) async {
+    print("api=====+++++=======$order_number");
+    final response = await http.post(
+        Uri.parse(BASE_URL + SendReceipt),
+        body: ({
+          'order_number': order_number,
+        })
+      //headers: {HttpHeaders.acceptHeader: "application/json"},
+    );
+    var ConvertDataToJson = jsonDecode(response.body);
+    return ConvertDataToJson;
+  }
+
+
+
+
+/*Future FileUpload(String id,String status, File file) async{
+
+    print("============${id}");
+    print("============${status}");
+    print("============${file}");
+   //create multipart request for POST or PATCH method
+   var request = http.MultipartRequest("POST", Uri.parse(BASE_URL + UPDATE_JOB_STATUS));
+   //add text fields
+   request.fields["job_id"] = id;
+   request.fields["status"] = status;
+   //create multipart using filepath, string or bytes
+   var pic = await http.MultipartFile.fromPath("image", file.path);
+
+   var response = await request.send();
+
+   //Get the response from the server
+   var responseData = await response.stream.toBytes();
+   var responseString = String.fromCharCodes(responseData);
+   print('====$response');
+   print('====$responseData');
+   print('=======$responseString');
+   //var ConvertDataToJson = jsonDecode(re);
+   return responseString;
+ }*/
+
 
 }

@@ -38,7 +38,7 @@ class Forgotpassword_controller extends GetxController {
 
         Get.snackbar(response['status'].toString(), '',
           snackPosition: SnackPosition.BOTTOM,
-          backgroundColor: Color(0xffEC297B),
+          backgroundColor: Color(0xffec8b29),
           barBlur: 0,
           colorText: Colors.white,
           maxWidth: double.infinity,
@@ -56,7 +56,7 @@ class Forgotpassword_controller extends GetxController {
 
         Get.snackbar(response['message'].toString(), '',
           snackPosition: SnackPosition.BOTTOM,
-          backgroundColor: Color(0xffEC297B),
+          backgroundColor: Color(0xffec8b29),
           padding: EdgeInsets.symmetric(
               vertical: 5,horizontal: 5
           ),
