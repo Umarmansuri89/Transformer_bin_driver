@@ -397,9 +397,9 @@ class Deshboard_screen_Controller extends GetxController {
             snackStyle: SnackStyle.GROUNDED,
             borderRadius: 10,);
 
-          My_jobs();
-          isLoading(false);
 
+          isLoading(false);
+          My_jobs();
         } else {
 
           Get.snackbar("Failed",'',

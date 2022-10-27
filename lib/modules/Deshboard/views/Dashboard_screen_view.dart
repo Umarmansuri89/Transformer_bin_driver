@@ -430,27 +430,29 @@ class _Dashboard_screen_ViewState extends State<Dashboard_screen_View> {
                                                             //controller.google(double.parse(controller.items[index].latitude),double.parse(controller.items[index].longitude));
                                                             // controller.Hide_leading[index]=true;
                                                             /*_textColor = Colors.black;*/
-                                                            // controller.Colorlist[index]=0xFF2E2E2E;
+                                                            controller.Colorlist[index]=0xFF2E2E2E;
                                                           } else {
                                                             // controller.select= -1;
                                                             print("false");
+
+                                                            for(int i=0; i<controller.items.length; i++){
+                                                              setState(() {});
+                                                              controller.Colorlist[i]=0xFFffffff;
+                                                              controller.Hide_leading[i]=false;
+                                                            }
                                                             // controller.Hide_leading[index]=false;
                                                             /*_textColor = Colors.white;*/
                                                             // controller.Colorlist[index]=0xFFffffff;
                                                           }
-                                                          for(int i=0; i<controller.items.length; i++){
-                                                            setState(() {});
-                                                            controller.Colorlist[i]=0xFFffffff;
-                                                            controller.Hide_leading[i]=false;
-                                                          }
+
                                                           if (expanded) {
-                                                            setState(() {
-                                                            });
+                                                            setState(() {});
                                                             controller.Colorlist[index]=0xFF2E2E2E;
                                                             controller.Hide_leading[index]=true;
                                                             controller.select=index;
                                                           }else {
                                                             setState(() {});
+                                                            controller.Colorlist[index]=0xFFffffff;
                                                             controller.select = -1;
                                                           }
                                                         });
@@ -586,7 +588,7 @@ class _Dashboard_screen_ViewState extends State<Dashboard_screen_View> {
                                                                       onTap: (){
                                                                         controller.Delivery_status.value="6";
                                                                         controller.bin_id.value=controller.items[index].id;
-                                                                        controller.Markoff();
+                                                                        MerkOff_popup(context);
                                                                       },
                                                                       child:  Row(
                                                                         children: [
@@ -783,15 +785,16 @@ class _Dashboard_screen_ViewState extends State<Dashboard_screen_View> {
                                                             controller.Colorlist[index]=0xFF2E2E2E;
                                                           } else {
                                                             print("false");
+                                                            for(int i=0; i<controller.items.length; i++){
+                                                              setState(() {});
+                                                              controller.Colorlist[i]=0xFFffffff;
+                                                              controller.Hide_leading[i]=false;
+                                                            }
                                                             // controller.Hide_leading[index]=false;
                                                             /*_textColor = Colors.white;*/
                                                             // controller.Colorlist[index]=0xFFffffff;
                                                           }
-                                                          for(int i=0; i<controller.items.length; i++){
-                                                            setState(() {});
-                                                            controller.Colorlist[i]=0xFFffffff;
-                                                            controller.Hide_leading[i]=false;
-                                                          }
+
                                                           if (expanded) {
                                                             setState(() {
                                                             });
@@ -924,7 +927,7 @@ class _Dashboard_screen_ViewState extends State<Dashboard_screen_View> {
                                                                 onTap: (){
                                                                   controller.Delivery_status.value="6";
                                                                   controller.bin_id.value=controller.items[index].id;
-                                                                  controller.Markoff();
+                                                                  MerkOff_popup(context);
                                                                 },
                                                                 child:  Row(
                                                                   children: [
@@ -1112,15 +1115,15 @@ class _Dashboard_screen_ViewState extends State<Dashboard_screen_View> {
                                                             controller.Colorlist[index]=0xFF2E2E2E;
                                                           } else {
 
+                                                            for(int i=0; i<controller.items.length; i++){
+                                                              setState(() {});
+                                                              controller.Colorlist[i]=0xFFffffff;
+                                                              controller.Hide_leading[i]=false;
+                                                            }
                                                             print("false");
                                                             // controller.Hide_leading[index]=false;
                                                             /*_textColor = Colors.white;*/
                                                             // controller.Colorlist[index]=0xFFffffff;
-                                                          }
-                                                          for(int i=0; i<controller.items.length; i++){
-                                                            setState(() {});
-                                                            controller.Colorlist[i]=0xFFffffff;
-                                                            controller.Hide_leading[i]=false;
                                                           }
                                                           if (expanded) {
                                                             setState(() {
@@ -1256,7 +1259,7 @@ class _Dashboard_screen_ViewState extends State<Dashboard_screen_View> {
                                                                 onTap: (){
                                                                   controller.Delivery_status.value="6";
                                                                   controller.bin_id.value=controller.items[index].id;
-                                                                  controller.Markoff();
+                                                                  MerkOff_popup(context);
                                                                 },
                                                                 child:  Row(
                                                                   children: [
@@ -1454,16 +1457,16 @@ class _Dashboard_screen_ViewState extends State<Dashboard_screen_View> {
                                                             /*_textColor = Colors.black;*/
                                                             // controller.Colorlist[index]=0xFF2E2E2E;
                                                           } else {
+                                                            for(int i=0; i<controller.items.length; i++){
+                                                              setState(() {});
+                                                              controller.Colorlist[i]=0xFFffffff;
+                                                              controller.Hide_leading[i]=false;
+                                                            }
                                                             // controller.select= -1;
                                                             print("false");
                                                             // controller.Hide_leading[index]=false;
                                                             /*_textColor = Colors.white;*/
                                                             // controller.Colorlist[index]=0xFFffffff;
-                                                          }
-                                                          for(int i=0; i<controller.items.length; i++){
-                                                            setState(() {});
-                                                            controller.Colorlist[i]=0xFFffffff;
-                                                            controller.Hide_leading[i]=false;
                                                           }
                                                           if (expanded) {
                                                             setState(() {
@@ -1789,14 +1792,14 @@ class _Dashboard_screen_ViewState extends State<Dashboard_screen_View> {
                                                             controller.Colorlist[index]=0xFF2E2E2E;
                                                           } else {
                                                             print("false");
+                                                            for(int i=0; i<controller.items.length; i++){
+                                                              setState(() {});
+                                                              controller.Colorlist[i]=0xFFffffff;
+                                                              controller.Hide_leading[i]=false;
+                                                            }
                                                             // controller.Hide_leading[index]=false;
                                                             /*_textColor = Colors.white;*/
                                                             // controller.Colorlist[index]=0xFFffffff;
-                                                          }
-                                                          for(int i=0; i<controller.items.length; i++){
-                                                            setState(() {});
-                                                            controller.Colorlist[i]=0xFFffffff;
-                                                            controller.Hide_leading[i]=false;
                                                           }
                                                           if (expanded) {
                                                             setState(() {
@@ -2104,16 +2107,15 @@ class _Dashboard_screen_ViewState extends State<Dashboard_screen_View> {
                                                             /*_textColor = Colors.black;*/
                                                             controller.Colorlist[index]=0xFF2E2E2E;
                                                           } else {
-
+                                                            for(int i=0; i<controller.items.length; i++){
+                                                              setState(() {});
+                                                              controller.Colorlist[i]=0xFFffffff;
+                                                              controller.Hide_leading[i]=false;
+                                                            }
                                                             print("false");
                                                             // controller.Hide_leading[index]=false;
                                                             /*_textColor = Colors.white;*/
                                                             // controller.Colorlist[index]=0xFFffffff;
-                                                          }
-                                                          for(int i=0; i<controller.items.length; i++){
-                                                            setState(() {});
-                                                            controller.Colorlist[i]=0xFFffffff;
-                                                            controller.Hide_leading[i]=false;
                                                           }
                                                           if (expanded) {
                                                             setState(() {
@@ -2426,17 +2428,17 @@ class _Dashboard_screen_ViewState extends State<Dashboard_screen_View> {
                                                             /*_textColor = Colors.black;*/
                                                             controller.Colorlist[index]=0xFFD9D9D9;
                                                           } else {
-
+                                                            for(int i=0; i<controller.items.length; i++){
+                                                              setState(() {});
+                                                              controller.Colorlist[i]=0xFFffffff;
+                                                              controller.Hide_leading[i]=false;
+                                                            }
                                                             print("false");
                                                             // controller.Hide_leading[index]=false;
                                                             /*_textColor = Colors.white;*/
                                                             // controller.Colorlist[index]=0xFFffffff;
                                                           }
-                                                          for(int i=0; i<controller.items.length; i++){
-                                                            setState(() {});
-                                                            controller.Colorlist[i]=0xFFffffff;
-                                                            controller.Hide_leading[i]=false;
-                                                          }
+
                                                           if (expanded) {
                                                             setState(() {
                                                             });
@@ -2991,6 +2993,85 @@ class _Dashboard_screen_ViewState extends State<Dashboard_screen_View> {
                     onPressed: () {
                       Navigator.of(context).pop(true);
                       SystemNavigator.pop();
+                    },
+                  ),
+                ),),
+
+
+              ],
+            );
+        });
+  }
+
+  Future<bool?> MerkOff_popup(context) async {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+              elevation: 10,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10.0))),
+              backgroundColor: Colors.orange,
+              title:
+              Padding(padding: EdgeInsets.only(top: 20),child:  Center(
+                child:
+                Text(
+                  'Are you sure to cancel this job?',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Lato',
+                  ),
+                ),
+
+                //Text('Do you want to exit ',),
+              ),),
+
+
+              content:
+              Text(''),
+              actionsAlignment: MainAxisAlignment.spaceEvenly,
+
+              actions: <Widget>[
+                Padding(padding: EdgeInsets.only(bottom: 20),child: Container(
+                  decoration: BoxDecoration(
+                    color: const Color(0xffffffff),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: TextButton(
+                    child: Text(
+                      'NO',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: 'Lato',
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).pop(false);
+                    },
+                  ),
+                ),),
+                Padding(padding: EdgeInsets.only(bottom: 20),child: Container(
+                  decoration: BoxDecoration(
+                    color: const Color(0xffffffff),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: TextButton(
+                    child: Text(
+                      'YES',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: 'Lato',
+                      ),
+                    ),
+                    onPressed: () {
+                      controller.Markoff();
+                      Navigator.of(context).pop(false);
                     },
                   ),
                 ),),

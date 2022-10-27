@@ -46,6 +46,7 @@ class CustomAlertDialog extends StatelessWidget {
             onTap: (){
               if(controller.bin_payment_status.isNotEmpty){
                 controller.getFromCamera();
+                Navigator.of(context).pop(false);
               }else{
                 Get.snackbar(
                   'Please Select Payment Status',
@@ -75,6 +76,7 @@ class CustomAlertDialog extends StatelessWidget {
 
                 if(controller.bin_payment_status.isNotEmpty){
                   controller.getFromGallery();
+                  Navigator.of(context).pop(false);
                 }else{
                   Get.snackbar(
                     'Please Select Payment Status',
