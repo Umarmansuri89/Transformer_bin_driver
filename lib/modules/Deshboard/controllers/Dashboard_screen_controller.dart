@@ -32,7 +32,7 @@ class Deshboard_screen_Controller extends GetxController {
 
   final IsVisible=false.obs;
 
-  var Colorlist = [].obs;
+  final Colorlist = [].obs;
   final current = 0.obs;
   final dob = "00/00/0000".obs;
   final dateSelected = "".obs;
@@ -137,7 +137,7 @@ class Deshboard_screen_Controller extends GetxController {
   PolylinePoints polylinePoints = PolylinePoints();
 
   //String googleAPiKey = "AIzaSyDma7ThRPGokuU_cJ2Q_qFvowIpK35RAPs";
-  String googleAPiKey = "AIzaSyBHjDOZHzSd2iPofvHEACOOUISFXPWoY1s";
+  String googleAPiKey = "AIzaSyApM3UtlRzy4x1801CgWkiHHnZWX4lsuuo";
 
   Set<Marker> markers1 = Set(); //markers for google map
   Map<PolylineId, Polyline> polylines = {}; //polylines to show direction
@@ -430,6 +430,7 @@ class Deshboard_screen_Controller extends GetxController {
 
 
   void My_jobs() async {
+    Colorlist.clear();
     items.value.clear();
     isLoading(true);
     SharedPreferences preferences = await SharedPreferences.getInstance();
@@ -444,6 +445,11 @@ class Deshboard_screen_Controller extends GetxController {
         List dataList = response['data'].toList();
         items.value = dataList.map((json) => My_jobs_model.fromJson(json)).toList();
 
+
+        for(int i=0;i<items.value.length;i++){
+          Colorlist.add(0xFFffffff);
+          Hide_leading.add(false);
+        }
         DriverID.value=items.value[0].driver_id;
 
        print("====================${items.value}");

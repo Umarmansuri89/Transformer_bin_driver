@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "646948589418",
+    "project_id": "transformer-bin-driver",
+    "storage_bucket": "transformer-bin-driver.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:646948589418:android:fd79a1581a07e927971f13",
+        "android_client_info": {
+          "package_name": "com.pnp.transformer_bin_driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "646948589418-3asj6lsn98oppft4jttjku4p3o991ctu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrkGxrqc7z0bYLiGcKsrTiRwCt1MdDUxM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "646948589418-3asj6lsn98oppft4jttjku4p3o991ctu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

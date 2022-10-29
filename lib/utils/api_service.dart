@@ -23,7 +23,10 @@ class ApiService {
   static const String AddNotes = "/AddNotes";
   static const String GetNotes = "/GetNotes";
   static const String SendReceipt  = "/SendReceipt";
-  static const String risk  = "http://testpnp.ml/stallion_new/api/risk_profile";
+  static const String ContactUs  = "/ContactUs";
+  static const String MyProfile  = "/MyProfile";
+  static const String Edit_Profile  = "/EditProfile";
+  //https://xugar.me/demo/mock/transformer-bin-hire/Apicontroller
 
 
   /*-------------------------------------------*/
@@ -83,6 +86,32 @@ class ApiService {
     var ConvertDataToJson = jsonDecode(response.body);
     return ConvertDataToJson;
   }
+  Future My_Profile(user_id) async {
+    final response = await http.post(
+        Uri.parse(BASE_URL + MyProfile),
+        body: ({
+          'user_id': user_id,
+        })
+      //headers: {HttpHeaders.acceptHeader: "application/json"},
+    );
+    var ConvertDataToJson = jsonDecode(response.body);
+    return ConvertDataToJson;
+  }
+
+  Future Update_Profile(user_id,first_name,last_name,mobile) async {
+    final response = await http.post(
+        Uri.parse(BASE_URL + Edit_Profile),
+        body: ({
+          'user_id': user_id,
+          'first_name': first_name,
+          'last_name': last_name,
+          'mobile': mobile,
+        })
+      //headers: {HttpHeaders.acceptHeader: "application/json"},
+    );
+    var ConvertDataToJson = jsonDecode(response.body);
+    return ConvertDataToJson;
+  }
 
   Future Notes(driver_id,job_id,note) async {
     print("api=====+++++=======$driver_id");
@@ -121,6 +150,14 @@ class ApiService {
   Future Get_Year_List() async {
     final response = await http.get(
       Uri.parse(BASE_URL + Year_List),
+      //headers: {HttpHeaders.acceptHeader: "application/json"},
+    );
+    var ConvertDataToJson = jsonDecode(response.body);
+    return ConvertDataToJson;
+  }
+  Future Contact_Us() async {
+    final response = await http.get(
+      Uri.parse(BASE_URL + ContactUs),
       //headers: {HttpHeaders.acceptHeader: "application/json"},
     );
     var ConvertDataToJson = jsonDecode(response.body);

@@ -6,10 +6,12 @@ import 'package:transformer_bin_driver/modules/Job_Type_Status/bindings/Jobtype_
 import 'package:transformer_bin_driver/modules/Job_Type_Status/views/Jobtype_status_view.dart';
 import 'package:transformer_bin_driver/modules/Job_list/bindings/Job_list_binding.dart';
 import 'package:transformer_bin_driver/modules/Job_list/views/Job_list_view.dart';
+import 'package:transformer_bin_driver/modules/Logout/bindings/Logout_binding.dart';
 import 'package:transformer_bin_driver/modules/New_password/bindings/New_password_binding.dart';
 import 'package:transformer_bin_driver/modules/New_password/views/New_password_view.dart';
 import 'package:transformer_bin_driver/modules/Otp/bindings/Otp_binding.dart';
 import 'package:transformer_bin_driver/modules/Otp/views/Otp_view.dart';
+import 'package:transformer_bin_driver/modules/aboutus/views/aboutus_view.dart';
 import 'package:transformer_bin_driver/modules/jobtype_long/bindings/jobtype_long_biding.dart';
 import 'package:transformer_bin_driver/modules/splash/bindings/splash_binding.dart';
 import 'package:transformer_bin_driver/modules/splash/views/splash_view.dart';
@@ -20,6 +22,10 @@ import '../modules/Job_Type/bindings/Jobtype_binding.dart';
 import '../modules/Job_Type/views/Jobtype_view.dart';
 import '../modules/Login/bindings/Login_binding.dart';
 import '../modules/Login/views/Login_view.dart';
+import '../modules/Logout/views/Logout_view.dart';
+import '../modules/aboutus/bindings/aboutus_binding.dart';
+import '../modules/dashboard_bottom_nav_bar/bindings/dashboard_binding.dart';
+import '../modules/dashboard_bottom_nav_bar/views/dashboard_view.dart';
 import '../modules/jobtype_long/Views/jobtype_long_View.dart';
 part 'app_routes.dart';
 
@@ -83,6 +89,21 @@ class AppPages {
       name: _Paths.GOOGLE_MEP,
       page: () => Google_mep_full_view(),
       binding: Google_mep_full_binding(),
+    ),
+    GetPage(
+      name: _Paths.DASHBOARD_BOTTOM_BAR,
+      page: () => DashboardView(),
+      binding: DashboardBinding(),
+    ),
+    GetPage(
+      name: _Paths.ABOUT_US,
+      page: () => AboutusView(),
+      binding: AboutusBinding(),
+    ),
+    GetPage(
+      name: _Paths.LOGOUT,
+      page: () => Logout_View(),
+      binding: Logout_binding(),
     ),
   ];
 }

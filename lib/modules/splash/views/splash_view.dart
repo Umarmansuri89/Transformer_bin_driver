@@ -31,7 +31,7 @@ class SplashView extends GetView<SplashController> {
 
                 Center(
                   child: Padding(
-                    padding: const EdgeInsets.all(20.0),
+                    padding: const EdgeInsets.all(0.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -57,8 +57,8 @@ class SplashView extends GetView<SplashController> {
                         ),
 
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                          child:  SvgPicture.asset("assets/Images/Frame.svg",height: MediaQuery.of(context).size.height/2,)
+                            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                            child:  SvgPicture.asset("assets/Images/Frame.svg",height: MediaQuery.of(context).size.height/3,)
                         ),
 
                       ],

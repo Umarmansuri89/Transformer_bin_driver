@@ -328,6 +328,7 @@ class jobtype_long_controler extends GetxController{
 
     } else if (response['status'] == "false") {
 
+
       isLoading(false);
 
       //  Get.toNamed(Routes.REGISTRATION, arguments: phoneController.text);
@@ -373,6 +374,7 @@ class jobtype_long_controler extends GetxController{
     print(response);
 
     if (response['status'] == "true") {
+
       List dataList = response['data'].toList();
       Note_items.value = dataList.map((json) => Get_node_model.fromJson(json)).toList();
 

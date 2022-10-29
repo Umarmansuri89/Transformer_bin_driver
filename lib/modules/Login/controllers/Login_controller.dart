@@ -58,7 +58,7 @@ class LoginController extends GetxController {
             maxWidth: double.infinity,
             snackStyle: SnackStyle.GROUNDED,
             borderRadius: 10,);
-          Get.offAllNamed(Routes.DASHBOARD_SCREEN);
+          Get.offAllNamed(Routes.DASHBOARD_BOTTOM_BAR);
 
         } else if (response['status'] == "false") {
 

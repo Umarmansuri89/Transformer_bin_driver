@@ -27,7 +27,7 @@ class _Google_mep_full_viewState extends State<Google_mep_full_view> {
   PolylinePoints polylinePoints = PolylinePoints();
 
   //String googleAPiKey = "AIzaSyDma7ThRPGokuU_cJ2Q_qFvowIpK35RAPs";
-  String googleAPiKey = "AIzaSyBHjDOZHzSd2iPofvHEACOOUISFXPWoY1s";
+  String googleAPiKey = "AIzaSyApM3UtlRzy4x1801CgWkiHHnZWX4lsuuo";
 
   Set<Marker> markers = Set(); //markers for google map
   Map<PolylineId, Polyline> polylines = {}; //polylines to show direction

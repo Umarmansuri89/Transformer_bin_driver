@@ -19,11 +19,13 @@ AppBar appbar(String title) => AppBar(
             onTap: () {
               Get.back();
             },
-            child: Icon(
+            child:
+            /*Icon(
               Icons.arrow_back_ios_sharp,
-              color: Colors.white,
+              color: Colors.black,
               size: 16,
-            ),
+            ),*/
+            SizedBox()
           ),
           Text(
             title,

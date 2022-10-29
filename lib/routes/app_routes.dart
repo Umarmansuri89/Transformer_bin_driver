@@ -25,6 +25,10 @@ abstract class Routes {
   static const OTP = _Paths.OTP;
   static const NEW_PASSWORD = _Paths.NEW_PASSWORD;
   static const GOOGLE_MEP = _Paths.GOOGLE_MEP;
+  static const DASHBOARD_BOTTOM_BAR= _Paths.DASHBOARD_BOTTOM_BAR;
+  static const ABOUT_US= _Paths.ABOUT_US;
+  static const PROFILE_PAGE= _Paths.PROFILE_PAGE;
+  static const LOGOUT= _Paths.LOGOUT;
 
 
 
@@ -35,6 +39,7 @@ abstract class _Paths {
   _Paths._();
 
   static const HOME = '/home';
+  static const PROFILE_PAGE = '/profile-page';
   static const SPLASH = '/Login';
   static const LOGIN = '/login';
   static const REGISTRATION = '/registration';
@@ -54,6 +59,9 @@ abstract class _Paths {
   static const OTP = '/otp';
   static const NEW_PASSWORD = '/new_password';
   static const GOOGLE_MEP = '/google_mep_full';
+  static const DASHBOARD_BOTTOM_BAR = '/Deshboard_bottom_bar';
+  static const ABOUT_US = '/aboutus';
+  static const LOGOUT = '/logout';
 
 
 

@@ -35,7 +35,7 @@ class SplashController extends GetxController {
     print("status"+status);
 
     loginstatus=="true"
-        ? Get.offAllNamed(Routes.DASHBOARD_SCREEN)
+        ? Get.offAllNamed(Routes.DASHBOARD_BOTTOM_BAR)
         : Get.offAllNamed(Routes.LOGIN);
   }
 

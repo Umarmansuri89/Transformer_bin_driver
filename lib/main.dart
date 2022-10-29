@@ -1,10 +1,14 @@
 import 'dart:io';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:get/get.dart';
 import 'package:transformer_bin_driver/routes/app_pages.dart';
 
 
+Future<void> _messageHandler(RemoteMessage message) async {
+ print('background message ${message.notification!.body}');
+}
 class MyHttpOverrides extends HttpOverrides{
   @override
   HttpClient createHttpClient(SecurityContext? context){
@@ -13,21 +17,22 @@ class MyHttpOverrides extends HttpOverrides{
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
 Future<void> main() async {
-
-  /* await SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown,
-  ]);*/
-  await FlutterDownloader.initialize(
-      debug: true,
-      ignoreSsl: true// optional: set to false to disable printing logs to console (default: true)
-      //ignoreSsl: true // option: set to false to disable working with http links (default: false)
-  );
-
   HttpOverrides.global = new MyHttpOverrides();
   WidgetsFlutterBinding.ensureInitialized();
-
+  await Firebase.initializeApp();
+  FirebaseMessaging.onBackgroundMessage(_messageHandler);
   runApp(
     GetMaterialApp(
       title: "Application",
@@ -43,5 +48,6 @@ Future<void> main() async {
           textSelectionTheme:
           TextSelectionThemeData(cursorColor: Colors.black)),
     ),
+
   );
 }
